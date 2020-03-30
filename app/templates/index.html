@@ -32,21 +32,18 @@
     /* First image (Logo. Full height) */
     .bgimg-1 {
         background-color: black;
-        background-image: url('/w3images/parallax1.jpg');
-        min-height: 100%;
+        min-height: 90%;
     }
 
-    /* Second image (Portfolio) */
+    /* Second image (Services) */
     .bgimg-2 {
         background-color: black;
-        background-image: url("/w3images/parallax2.jpg");
         min-height: 400px;
     }
 
     /* Third image (Contact) */
     .bgimg-3 {
         background-color: black;
-        background-image: url("/w3images/parallax3.jpg");
         min-height: 400px;
     }
 
@@ -128,18 +125,68 @@
 
     }
 
+    .gridcontainer {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-content: center;
+        grid-template-columns: repeat(9, 20vmin);
+        grid-template-rows: repeat(2, 20vmin);
+        grid-gap: 10px;
+        background-color: black;
+        color: #444;
+    }
+
+    .gridcontainer > div {
+        background: #EDE7F6;
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(2, 5vw);
+        grid-gap: .1rem;
+        padding: 1.5rem;
+        border-radius: 1rem;
+
+
+        /*width: 100vw;*/
+        /*height: 100vh;*/
+        /*justify-content: center;*/
+        /*align-content: center;*/
+        /*grid-template-columns: repeat(9, 20vmin);*/
+        /*grid-template-rows: repeat(2, 20vmin);*/
+        /*grid-gap: 10px;*/
+        /*background-color: black;*/
+        color: white;
+
+
+    }
+
+    .gallery__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
 </style>
+
 <body onunload="WriteCookie()">
 
-
 <!-- Navbar (sit on top) -->
-<div class="w3-top">
+<div class="w3-container">
 
     <div class="w3-bar w3-border-bottom" id="myNavbar">
-        <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);"
+        <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+           href="javascript:void(0);"
            onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i>
         </a>
-        <a href="home" class="w3-bar-item"><img src="{{ url_for('static', filename='images/logo.png') }}" height="80"
+        <a href="home" class="w3-bar-item"><img src="{{ url_for('static', filename='images/logo.png') }}"
+                                                height="80"
                                                 width="250" align="left"> </a>
 
         <div class="search-container" style="position: absolute; left:500px;  top:20px; ">
@@ -155,7 +202,7 @@
         </div>
 
         <div class="menu-content">
-            <a href="#" id="Sign-In" class="w3-right w3-margin-right w3-bar-item w3-button w3-hide-small"><i
+            <a href="#" id="Log-In" class="w3-right w3-margin-right w3-bar-item w3-button w3-hide-small"><i
                     class="fa fa-unlock-alt"></i> LOGIN </a>
             <!--<a href="#contact" class="w3-right w3-bar-item w3-button w3-hide-small"><i class="fa fa-lock"></i> SIGN OUT</a>-->
         </div>
@@ -196,12 +243,209 @@
 
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-    <div class="w3-display-middle" style="white-space:nowrap;">
-        {#<span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">THE A TEAM <span
-                class="w3-hide-small"></span></span>#}
+    <div class="w3-container">
+        <div class="gallery">
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.gif') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.gif') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.gif') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/Slither_Logo.png') }}" class="gallery__img">
+            </figure>
+
+
+            <!--    <figure class="w3-cell">
+                    <figure class="w3-cell-middle ">
+                        <figure class="w3-center" > Slither</figure>
+                    <figure class="w3-cell-bottom">
+                        <figure class="w3-border-top w3-center" > Slither </figure>
+                    </figure>
+                </figure>-->
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.gif') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+
+        </div>
+    </div>
+
+
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+    <h3 class="w3-center">HOW IT WORKS</h3>
+    <p class="w3-center"><em>Easy As 1-2-3 </em></p>
+    <p>Insert text here.</p>
+
+    <p class="w3-large w3-center w3-padding-16">Statistics:</p>
+    <p class="w3-wide"><i class="fa fa-thumbs-o-up"></i>Customer Satisfaction</p>
+    <div class="w3-light-grey">
+        <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:100%">100%</div>
+    </div>
+    <p class="w3-wide"><i class="fa fa-usd"></i>Cost Savings</p>
+    <div class="w3-light-grey">
+        <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:45%">45%</div>
+    </div>
+</div>
+</div>
+
+<div class="w3-row w3-center w3-dark-grey w3-padding-16">
+    <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">12+</span><br>
+        Partners
+    </div>
+    <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">5K+</span><br>
+        Estimates Done
+    </div>
+    <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">50+</span><br>
+        Happy Clients
+    </div>
+    <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">150+</span><br>
+        Meetings
     </div>
 </div>
 
+<!-- Second Parallax Image with Request Quote Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+        <span class="w3-xxlarge w3-text-white w3-wide">REQUEST QUOTE</span>
+    </div>
+</div>
+
+<!-- Container (Request Quote Section) -->
+<div class="w3-content w3-container w3-padding-64" id="quote">
+    <h3 class="w3-center">PLEASE COMPLETE FORM BELOW</h3>
+    <div class="w3-row w3-padding-32 w3-section">
+        <div class="w3-col m8 w3-panel">
+
+            <form name="form" action="/action_page.php" target="_blank">
+                <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                    <div class="w3-wide">
+                        <input id="gallons" class="w3-input w3-border" type="text" placeholder="Gallons Requested"
+                               required name="Gallons">
+                        <input id="date" class="w3-input w3-border" type="text" placeholder="Delivery Date" required
+                               name="Delivery Date">
+                        <input id="location" class="w3-input w3-border" type="text" placeholder="Delivery Location"
+                               required name="Delivery Location">
+                        <input id="username" class="w3-input w3-border" type="text"
+                               placeholder="Delivery Contact Person Name" required name="Delivery Contact Person Name">
+                        <input class="w3-input w3-border" type="text" placeholder="Delivery Contact Person Phone"
+                               required name="Delivery Contact Person Phone">
+                        <input id="email" class="w3-input w3-border" type="text"
+                               placeholder="Delivery Contact Person Email" required
+                               name="Delivery Contact Person Email">
+                    </div>
+                    <div class="w3-wide">
+                        <input class="w3-input w3-border" type="text" placeholder="Suggested Price per Gallon" required
+                               name="Suggested Price per Gallon">
+                        <input class="w3-input w3-border" type="text" placeholder="Total Amount Due" required
+                               name="Total Amount Due">
+                    </div>
+                </div>
+
+                <button class="w3-button w3-black w3-center w3-section" type="submit" onclick="checkFields()">
+                    <i class="fa fa-paper-plane"></i> SUBMIT
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+        <img id="img01" class="w3-image">
+        <p id="caption" class="w3-opacity w3-large"></p>
+    </div>
+</div>
+
+<!-- Third Parallax Image with Services Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+        <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+    </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contact">
+    <h3 class="w3-center">HEADQUARTERS</h3>
+    <p class="w3-center"><em>Contact us directly for more assistance!</em></p>
+
+    <div class="w3-row w3-padding-32 w3-section">
+        <div class="w3-col m8 w3-panel">
+            <div class="w3-large w3-margin-bottom">
+                <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Austin, TX<br>
+                <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: (512)
+                555-FUEL<br>
+                <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email:
+                fuelestimators@gmail.com<br>
+            </div>
+
+            <form action="/action_page.php" target="_blank">
+                <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                    <div class="w3-half">
+                        <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                    </div>
+                    <div class="w3-half">
+                        <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                    </div>
+                </div>
+                <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+                <button class="w3-button w3-black w3-right w3-section" type="submit">
+                    <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
