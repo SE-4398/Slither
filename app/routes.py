@@ -5,9 +5,22 @@
 from flask import render_template
 from app import app
 
-
 @app.route('/')
 @app.route('/index')
 def index():
     user = {'username': 'Macy Gray'}
     return render_template('index.html', title='Home', user=user)
+
+@app.route('/login')
+def login():
+    return render_template('login.html', title='Login')
+
+@app.route('/register')
+def register():
+    return render_template('register.html', title='Register')
+
+@app.route('/slither')
+def slither():
+    return render_template('slither.html', title='Slither')
+
+

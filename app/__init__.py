@@ -4,7 +4,7 @@
 # associated resources such as template files
 from flask import Flask
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 # Prevent circular imports
 from app import routes

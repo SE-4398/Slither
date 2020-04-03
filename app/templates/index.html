@@ -32,21 +32,18 @@
     /* First image (Logo. Full height) */
     .bgimg-1 {
         background-color: black;
-        background-image: url('/w3images/parallax1.jpg');
-        min-height: 100%;
+        min-height: 90%;
     }
 
-    /* Second image (Portfolio) */
+    /* Second image (Services) */
     .bgimg-2 {
         background-color: black;
-        background-image: url("/w3images/parallax2.jpg");
         min-height: 400px;
     }
 
     /* Third image (Contact) */
     .bgimg-3 {
         background-color: black;
-        background-image: url("/w3images/parallax3.jpg");
         min-height: 400px;
     }
 
@@ -128,18 +125,69 @@
 
     }
 
+    .gridcontainer {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-content: center;
+        grid-template-columns: repeat(9, 20vmin);
+        grid-template-rows: repeat(2, 20vmin);
+        grid-gap: 10px;
+        background-color: black;
+        color: #444;
+    }
+
+    .gridcontainer > div {
+        background: #EDE7F6;
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(2, 5vw);
+        grid-gap: .1rem;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        /*width: 100vw;*/
+        /*height: 100vh;*/
+        /*justify-content: center;*/
+        /*align-content: center;*/
+        /*grid-template-columns: repeat(9, 20vmin);*/
+        /*grid-template-rows: repeat(2, 20vmin);*/
+        /*grid-gap: 10px;*/
+        /*background-color: black;*/
+        color: white;
+    }
+
+    .gallery__img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+    }
+
+    div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
 </style>
+
 <body onunload="WriteCookie()">
 
-
 <!-- Navbar (sit on top) -->
-<div class="w3-top">
+<div class="w3-container">
 
     <div class="w3-bar w3-border-bottom" id="myNavbar">
-        <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);"
+        <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+           href="javascript:void(0);"
            onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i>
         </a>
-        <a href="home" class="w3-bar-item"><img src="{{ url_for('static', filename='images/logo.png') }}" height="80"
+        <a href="home" class="w3-bar-item"><img src="{{ url_for('static', filename='images/logo.png') }}"
+                                                height="80"
                                                 width="250" align="left"> </a>
 
         <div class="search-container" style="position: absolute; left:500px;  top:20px; ">
@@ -149,39 +197,13 @@
             </form>
         </div>
         <div class="menu-content">
-            <a href="#" id="Sign-In" class="w3-right w3-margin-right w3-bar-item w3-button w3-hide-small"><i
+            <a href="{{ url_for('register') }}" id="Register" class="w3-right w3-margin-right w3-bar-item w3-button w3-hide-small"><i
                     class="fas fa-user-plus"></i> REGISTER </a>
-            <!--<a href="#contact" class="w3-right w3-bar-item w3-button w3-hide-small"><i class="fa fa-lock"></i> SIGN OUT</a>-->
         </div>
 
         <div class="menu-content">
-            <a href="#" id="Sign-In" class="w3-right w3-margin-right w3-bar-item w3-button w3-hide-small"><i
+           <a href="{{ url_for('login') }}" id="Log-In" class="w3-right w3-margin-right w3-bar-item w3-button w3-hide-small"><i
                     class="fa fa-unlock-alt"></i> LOGIN </a>
-            <!--<a href="#contact" class="w3-right w3-bar-item w3-button w3-hide-small"><i class="fa fa-lock"></i> SIGN OUT</a>-->
-        </div>
-        <div class="arrow-up"></div>
-        <div class="login-form">
-            <form name="signinform">
-                <label>Username</label>
-                <div>
-                    <input type="text" id="user" placeholder="Username" required/>
-                </div>
-                <label>Password</label>
-                <div>
-                    <input type="password" id="password" placeholder="Password" required/>
-                </div>
-                <div>
-                    <input type="submit" value="Log In"/>
-                </div>
-                <div>
-                    <a href="#" style="text-decoration:none;position:relative;top:20px;font-size:16px;color:gray;">Forgot
-                        Your Password?</a>
-                </div>
-            </form>
-            <form name="myform" action="">
-                <p> click the following button and see the result:</p>
-                <input type="button" value="Get Cookie" onclick="ReadCookie()"/>
-            </form>
         </div>
     </div>
 
@@ -196,12 +218,142 @@
 
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-    <div class="w3-display-middle" style="white-space:nowrap;">
-        {#<span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">THE A TEAM <span
-                class="w3-hide-small"></span></span>#}
+    <div class="w3-container">
+        <div class="gallery">
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.gif') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.gif') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.gif') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                 <a href="{{ url_for('slither') }}">
+                <img src="{{ url_for('static', filename='images/Slither_Logo.png') }}" class="gallery__img" width="200" height="200" >
+                 </a>
+                <div class="desc">Slither</div>
+            </figure>
+
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.gif') }}" class="gallery__img">
+            </figure>
+            <figure class="gallery__item">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            </figure>
+
+        </div>
+    </div>
+
+
+</div>
+
+<!-- Container -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+    <div class="w3-light-grey">
+    </div>
+</div>
+</div>
+
+<div class="w3-row w3-center w3-dark-grey w3-padding-16">
+
+</div>
+
+<!-- Second Parallax Image  -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
     </div>
 </div>
 
+<!-- Container  -->
+<div class="w3-content w3-container w3-padding-64" id="quote">
+
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+        <img id="img01" class="w3-image">
+        <p id="caption" class="w3-opacity w3-large"></p>
+    </div>
+</div>
+
+<!-- Third Parallax  -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+        <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+    </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contact">
+    <h3 class="w3-center">HEADQUARTERS</h3>
+    <p class="w3-center"><em>Contact us directly for more assistance!</em></p>
+
+    <div class="w3-row w3-padding-32 w3-section">
+        <div class="w3-col m8 w3-panel">
+            <div class="w3-large w3-margin-bottom">
+                <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Zoom Nation, TX<br>
+                <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: (512) 555-SNAK <br>
+                <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email:
+                theateam@gmail.com<br>
+            </div>
+
+            <form action="/action_page.php" target="_blank">
+                <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                    <div class="w3-half">
+                        <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                    </div>
+                    <div class="w3-half">
+                        <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                    </div>
+                </div>
+                <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+                <button class="w3-button w3-black w3-right w3-section" type="submit">
+                    <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
