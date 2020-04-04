@@ -31,19 +31,19 @@
 
     /* First image (Logo. Full height) */
     .bgimg-1 {
-        background-color: black;
+        background-color: #000000;
         min-height: 90%;
     }
 
     /* Second image (Services) */
     .bgimg-2 {
-        background-color: black;
+        background-color: #000000;
         min-height: 400px;
     }
 
     /* Third image (Contact) */
     .bgimg-3 {
-        background-color: black;
+        background-color: #000000;
         min-height: 400px;
     }
 
@@ -63,29 +63,6 @@
         }
     }
 
-    .arrow-up {
-        width: 0;
-        height: 0;
-        position: absolute;
-        border-left: 20px solid transparent;
-        border-right: 20px solid transparent;
-        border-bottom: 20px solid #fff;
-        right: 45px;
-        top: 40px;
-        display: none;
-    }
-
-    .login-form {
-        position: absolute;
-        width: 300px;
-        height: auto;
-        background-color: #fff;
-        right: 10px;
-        top: 60px;
-        border-radius: 3px;
-        border-bottom: 5px solid gray;
-        display: none;
-    }
 
     .login-form > form {
         width: 250px;
@@ -125,21 +102,9 @@
 
     }
 
-    .gridcontainer {
-        display: grid;
-        width: 100vw;
-        height: 100vh;
-        justify-content: center;
-        align-content: center;
-        grid-template-columns: repeat(9, 20vmin);
-        grid-template-rows: repeat(2, 20vmin);
-        grid-gap: 10px;
-        background-color: black;
-        color: #444;
-    }
 
     .gridcontainer > div {
-        background: #EDE7F6;
+        background: white;
         padding: 1.5rem;
         border-radius: 1rem;
     }
@@ -148,31 +113,45 @@
         display: grid;
         grid-template-columns: repeat(9, 1fr);
         grid-template-rows: repeat(2, 5vw);
-        grid-gap: .1rem;
-        padding: 1.5rem;
+        grid-auto-columns: 50px;
+        grid-column-gap: 10px;
+        grid-row-gap: 90px;
+        padding-top: 150px;
+        padding-right: 100px;
+    }
+
+    .gallery__item {
         border-radius: 1rem;
-        /*width: 100vw;*/
-        /*height: 100vh;*/
-        /*justify-content: center;*/
-        /*align-content: center;*/
-        /*grid-template-columns: repeat(9, 20vmin);*/
-        /*grid-template-rows: repeat(2, 20vmin);*/
-        /*grid-gap: 10px;*/
-        /*background-color: black;*/
         color: white;
+        text-align: left;
+        text-indent: 5px;
+        background-color: black;
+        background-size: 190px 150px;
+    }
+
+    figure {
+        width: 100%;
+        height: 100%;
+        border: thin gray solid;
+        display: table;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .bounding-box {
+        background-image: url('../static/images/Slither_Logo.png');
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 
     .gallery__img {
         width: 100%;
-        height: auto;
+        height: 100%;
         object-fit: cover;
-        display: block;
+        padding: 1em;
+
     }
 
-    div.desc {
-  padding: 15px;
-  text-align: center;
-}
 
 </style>
 
@@ -197,12 +176,14 @@
             </form>
         </div>
         <div class="menu-content">
-            <a href="{{ url_for('register') }}" id="Register" class="w3-right w3-margin-right w3-bar-item w3-button w3-hide-small"><i
+            <a href="{{ url_for('register') }}" id="Register"
+               class="w3-right w3-margin-right w3-bar-item w3-button w3-hide-small"><i
                     class="fas fa-user-plus"></i> REGISTER </a>
         </div>
 
         <div class="menu-content">
-           <a href="{{ url_for('login') }}" id="Log-In" class="w3-right w3-margin-right w3-bar-item w3-button w3-hide-small"><i
+            <a href="{{ url_for('login') }}" id="Log-In"
+               class="w3-right w3-margin-right w3-bar-item w3-button w3-hide-small"><i
                     class="fa fa-unlock-alt"></i> LOGIN </a>
         </div>
     </div>
@@ -219,64 +200,261 @@
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
     <div class="w3-container">
-        <div class="gallery" padding-top="" 10%;>
-            <figure class="gallery__item">
-                <img src="{{ url_for('static', filename='images/logo.gif') }}" class="gallery__img">
+        <div class="gallery">
+            <figure class="gallery__item" style="background-image: url('../static/images/logo.png')">
+                <div class="w3-container">
+                    <a href="{{ url_for('index') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        The A Team
+                    </figcaption>
+                </div>
             </figure>
-            <figure class="gallery__item">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            <figure class="gallery__item" style="background-image: url('../static/images/logo.gif')">
+                <div class="w3-container">
+                    <a href="{{ url_for('index') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        The A Team
+                    </figcaption>
+                </div>
             </figure>
-            <figure class="gallery__item">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            <figure class="gallery__item" style="background-image: url('../static/images/logo.png')">
+                <div class="w3-container">
+                    <a href="{{ url_for('index') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        The A Team
+                    </figcaption>
+                </div>
             </figure>
-            <figure class="gallery__item">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            <figure class="gallery__item" style="background-image: url('../static/images/logo.png')">
+                <div class="w3-container">
+                    <a href="{{ url_for('index') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        The A Team
+                    </figcaption>
+                </div>
             </figure>
-            <figure class="gallery__item">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            <figure class="gallery__item" style="background-image: url('../static/images/logo.gif')">
+                <div class="w3-container">
+                    <a href="{{ url_for('index') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        The A Team
+                    </figcaption>
+                </div>
             </figure>
-            <figure class="gallery__item">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            <figure class="gallery__item" style="background-image: url('../static/images/logo.png')">
+                <div class="w3-container">
+                    <a href="{{ url_for('index') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        The A Team
+                    </figcaption>
+                </div>
             </figure>
-            <figure class="gallery__item">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            <figure class="gallery__item" style="background-image: url('../static/images/logo.png')">
+                <div class="w3-container">
+                    <a href="{{ url_for('index') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        The A Team
+                    </figcaption>
+                </div>
             </figure>
-            <figure class="gallery__item">
-                <img src="{{ url_for('static', filename='images/logo.gif') }}" class="gallery__img">
-            </figure>
-            <figure class="gallery__item">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
-            </figure>
-            <figure class="gallery__item">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
-            </figure>
-            <figure class="gallery__item">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
-            </figure>
-            <figure class="gallery__item">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
-            </figure>
-            <figure class="gallery__item">
-                <img src="{{ url_for('static', filename='images/logo.gif') }}" class="gallery__img">
-            </figure>
-            <figure class="gallery__item">
-                 <a href="{{ url_for('slither') }}">
-                <img src="{{ url_for('static', filename='images/Slither_Logo.png') }}" class="gallery__img" width="200" height="200" >
-                 </a>
-                <div class="desc">Slither</div>
+            <figure class="gallery__item" style="background-image: url('../static/images/logo.gif')">
+                <div class="w3-container">
+                    <a href="{{ url_for('index') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        The A Team
+                    </figcaption>
+                </div>
             </figure>
 
-            <figure class="gallery__item">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            <figure class="gallery__item" style="background-image: url('../static/images/logo.png')">
+                <div class="w3-container">
+                    <a href="{{ url_for('index') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        The A Team
+                    </figcaption>
+                </div>
             </figure>
-            <figure class="gallery__item">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+            <figure class="gallery__item" style="background-image: url('../static/images/logo.png')">
+                <div class="w3-container">
+                    <a href="{{ url_for('index') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        The A Team
+                    </figcaption>
+                </div>
             </figure>
-            <figure class="gallery__item">
-                <img src="{{ url_for('static', filename='images/logo.gif') }}" class="gallery__img">
+            <figure class="gallery__item" style="background-image: url('../static/images/logo.gif')">
+                <div class="w3-container">
+                    <a href="{{ url_for('index') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        The A Team
+                    </figcaption>
+                </div>
             </figure>
-            <figure class="gallery__item">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" class="gallery__img">
+
+            <figure class="gallery__item" style="background-image: url('../static/images/logo.png')">
+                <div class="w3-container">
+                    <a href="{{ url_for('index') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        The A Team
+                    </figcaption>
+                </div>
+            </figure>
+
+            <figure class="gallery__item" style="background-image: url('../static/images/logo.png')">
+                <div class="w3-container">
+                    <a href="{{ url_for('index') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        The A Team
+                    </figcaption>
+                </div>
+            </figure>
+            <figure class="gallery__item" style="background-image: url('../static/images/Slither_Logo.png')">
+                <div class="w3-container">
+                    <a href="{{ url_for('slither') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        Slither
+                    </figcaption>
+                </div>
+            </figure>
+            <figure class="gallery__item" style="background-image: url('../static/images/logo.gif')">
+                <div class="w3-container">
+                    <a href="{{ url_for('index') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        The A Team
+                    </figcaption>
+                </div>
+            </figure>
+            <figure class="gallery__item" style="background-image: url('../static/images/logo.png')">
+                <div class="w3-container">
+                    <a href="{{ url_for('index') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        The A Team
+                    </figcaption>
+                </div>
+            </figure>
+            <figure class="gallery__item" style="background-image: url('../static/images/logo.png')">
+                <div class="w3-container">
+                    <a href="{{ url_for('index') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        The A Team
+                    </figcaption>
+                </div>
+            </figure>
+            <figure class="gallery__item" style="background-image: url('../static/images/logo.png')">
+                <div class="w3-container">
+                    <a href="{{ url_for('index') }}">
+                        <p><br></p>
+                        <p><br></p>
+                        <p><br></p>
+                    </a>
+                </div>
+                <div style="border-top: thin solid white">
+                    <figcaption>
+                        The A Team
+                    </figcaption>
+                </div>
             </figure>
 
         </div>
@@ -332,7 +510,8 @@
         <div class="w3-col m8 w3-panel">
             <div class="w3-large w3-margin-bottom">
                 <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Zoom Nation, TX<br>
-                <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: (512) 555-SNAK <br>
+                <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: (512) 555-SNAK
+                <br>
                 <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email:
                 theateam@gmail.com<br>
             </div>
