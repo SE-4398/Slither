@@ -22,5 +22,3 @@ def register():
 @app.route('/slither')
 def slither():
     return render_template('slither.html', title='Slither')
-
-
