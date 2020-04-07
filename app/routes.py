@@ -23,4 +23,14 @@ def register():
 def slither():
     return render_template('slither.html', title='Slither')
 
+@app.route('/menu')
+def menu():
+    return  render_template('menu.html', title= 'Menu')
 
+@app.route('/credits')
+def menu():
+    return  render_template('credits.html', title= 'Credits')
+
+@app.route('/options')
+def menu():
+    return  render_template('options.html', title= 'Options')
