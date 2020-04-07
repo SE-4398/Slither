@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OPTIONS</title>
+</head>
+<style>
+    div {
+        width: 300px;
+        margin: auto;
+        border: 1px solid red;
+    }
+    body {
+        background-color: black;
+    }
+
+    a:link, a:visited{
+        background-color: chartreuse;
+        color: black;
+        padding: 14px 25px;
+        text-align:center;
+        text-decoration: none;
+        display: inline-block;
+    }
+    a:hover, a:active{
+        background-color: red;
+    }
+
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+    .container input{
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 15px;
+        width: 15px;
+        background-color: #eeeeee;
+        border-radius: 50%;
+    }
+
+    .container:hover input ~ .checkmark {
+        background-color: #cccccc;
+    }
+
+    .container input:checked ~ .checkmark{
+        background-color: white;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .container input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    .container .checkmark:after {
+        top: 5px;
+        left: 5px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: blue;
+    }
+
+</style>
+<body>
+<h1 style="color: #eeeeee" align="center">OPTIONS</h1>
+<div>
+    <p style="color: #eeeeee">Difficulty:</p>
+    <label class="container" style="color: #eeeeee">Easy
+        <input type="radio" checked="checked">
+        <span class="checkmark"></span>
+    </label>
+
+    <label class="container" style="color: #eeeeee">Medium
+        <input type="radio" checked="checked">
+        <span class="checkmark"></span>
+    </label>
+
+    <label class="container" style="color: #eeeeee">Hard
+        <input type="radio" checked="checked">
+        <span class="checkmark"></span>
+    </label>
+
+    <p style="color: #eeeeee">Snakeskin:</p>
+    <label class="container" style="color: #eeeeee"><img src=""><img src="../static/images/Skin1.png" height="40"
+                                                                    width="40"/>
+        <input type="radio" checked="checked">
+        <span class="checkmark"></span>
+    </label>
+
+    <label class="container" style="color: #eeeeee"><img src=""><img src="../static/images/Skin2.png" height="40"
+                                                                     width="40"/>
+        <input type="radio" checked="checked">
+        <span class="checkmark"></span>
+    </label>
+
+    <label class="container" style="color: #eeeeee"><img src=""><img src="../static/images/Skin3.png" height="40"
+                                                                     width="40"/>
+        <input type="radio" checked="checked">
+        <span class="checkmark"></span>
+    </label>
+
+
+    <p style="color: #eeeeee">Background:</p>
+    <label class="container" style="color: #eeeeee"><img src=""><img src="../static/images/Background1.png" height="40"
+                                                                    width="50"/>
+        <input type="radio" checked="checked">
+        <span class="checkmark"></span>
+    </label>
+
+    <label class="container" style="color: #eeeeee"><img src=""><img src="../static/images/Background2.png" height="40"
+                                                                     width="50"/>
+        <input type="radio" checked="checked">
+        <span class="checkmark"></span>
+    </label>
+
+    <label class="container" style="color: #eeeeee"><img src=""><img src="../static/images/Background3.png" height="40"
+                                                                     width="50"/>
+        <input type="radio" checked="checked">
+        <span class="checkmark"></span>
+    </label>
+
+    <a href="menu.html" target="_blank">RETURN TO MENU</a>
+</div>
+</body>
+</html>
