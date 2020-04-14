@@ -3,7 +3,20 @@
 # knows what logic to execute when a client requests a given URL.
 
 from flask import render_template
+from flask_bootstrap import Bootstrap
+from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_sqlalchemy import SQLAlchemy
+
+from app import forms
 from app import app
+from app.forms import LoginForm, RegisterForm
+
+Bootstrap(app)
+
+# necessary for flask wtforms to work
+app.config['SECRET_KEY'] = 'dev'
+
 
 @app.route('/')
 @app.route('/index')
@@ -11,13 +24,17 @@ def index():
     user = {'username': 'Macy Gray'}
     return render_template('index.html', title='Home', user=user)
 
-@app.route('/login')
-def login():
-    return render_template('login.html', title='Login')
 
-@app.route('/register')
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    return render_template('login.html', title='Login', form=form)
+
+
+@app.route('/register', methods=['GET', 'POST'])
 def register():
-    return render_template('register.html', title='Register')
+    form = RegisterForm()
+    return render_template('register.html', title='Register', form=form)
 
 @app.route('/slither')
 def slither():
