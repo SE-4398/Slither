@@ -17,6 +17,19 @@ Bootstrap(app)
 # necessary for flask wtforms to work
 app.config['SECRET_KEY'] = 'dev'
 
+import pymongo
+from pymongo import MongoClient
+
+# connection to cluster (machine) holding database
+cluster = MongoClient("mongodb+srv://root:SAdmin1@mongo-dev-db-0e9wb.mongodb.net/test?retryWrites=true&w=majority")
+
+# define database to operate on
+db = cluster["slither"]
+collection = db["users"]
+
+post = {"userId": "developer", "userPassword": "123"}
+collection.insert_one(post)
+
 
 @app.route('/')
 @app.route('/index')
