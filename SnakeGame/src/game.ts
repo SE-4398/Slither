@@ -9,11 +9,15 @@ import { creditScene } from "./scenes/creditScene";
 import GameConfig = Phaser.Types.Core.GameConfig;
 
 const config: GameConfig = {
-    width: 1300,
-    height: 650,
     type: Phaser.AUTO,
-    parent: "game",
-    scene: [menuScene],
+    scale: {
+        parent: "game",
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.FIT,
+        width: 1300,
+        height: 650,
+    },
+    scene: [menuScene, optionsScene, hudScene, creditScene, gameScene, pauseScene, gameOverScene],
     //optionsScene, hudScene, creditScene, gameScene, pauseScene, gameOverScene],
     input: {
         keyboard: true
