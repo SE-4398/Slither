@@ -10,13 +10,16 @@ from flask_login import LoginManager, UserMixin, login_required, login_user, log
 
 from flask_bootstrap import Bootstrap
 from app import app
-from app.forms import LoginForm, RegisterForm
+
+from app.models.registerUserSchema import LoginForm
+from app.models.loginUserSchema import RegisterForm
 
 Bootstrap(app)
 
 app.config['SECRET_KEY'] = 'dev'
 app.config['MONGO_DBNAME'] = 'slither'
-app.config['MONGO_URI'] = "mongodb+srv://root:SAdmin1@mongo-dev-db-0e9wb.mongodb.net/test?retryWrites=true&w=majority"
+app.config[
+    'MONGO_URI'] = "mongodb+srv://root:SAdmin1@mongo-dev-db-0e9wb.mongodb.net/slither?retryWrites=true&w=majority"
 
 mongo = PyMongo(app)
 
@@ -59,7 +62,8 @@ def register():
             users.insert({'name': request.form['username'], 'email': request.form['email'], 'password': hashpass})
             session['username'] = request.form['username']
             redirect(url_for('index'))
-        return 'The username already exists!'
+        else:
+            return 'The username already exists!'
 
     return render_template('register.html', title='Register', form=form)
 
