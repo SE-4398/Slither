@@ -25,7 +25,6 @@ export class menuScene extends Phaser.Scene{
         newGameButton.setInteractive();
         newGameButton.on('pointerdown', () => {
             this.scene.start("gameScene"); });
-            this.scene.bringToTop("hudScene");
 
         let optionsButton = this.add.text(150,150, "Options", {font: "16px Courier ", fill: "#0f0"});
         optionsButton.setInteractive();
@@ -49,5 +48,6 @@ export class menuScene extends Phaser.Scene{
         this.registry.set("modKills", 0);
         this.registry.set("preyKilled", 0);
         this.registry.set("rubyGot", 0);
+        this.registry.set("whichBackGround", 4);
     }
 }

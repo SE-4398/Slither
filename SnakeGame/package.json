@@ -9,6 +9,7 @@
     "webpack-cli": "^3.3.11"
   },
   "scripts": {
-    "dev": "webpack --mode development"
+    "dev": "webpack --mode development",
+    "debug": "webpack --devtool source-map --mode development"
   }
 }

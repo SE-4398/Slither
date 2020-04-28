@@ -1,6 +1,7 @@
 
 //Literal just displays the score
 export class hudScene extends Phaser.Scene{
+
     private bitmapText: Phaser.GameObjects.BitmapText[];
 
     constructor() {
@@ -27,12 +28,10 @@ export class hudScene extends Phaser.Scene{
         );
 
         // create events
-        const level = this.scene.get("gameScene");
-        level.events.on("pointsChanged", this.updatePoints, this);
-
+        //const level = this.scene.get("gameScene");
+        //level.events.on("pointsChanged", this.updatePoints, this);
 
     }
-
 
     private updatePoints() {
         this.bitmapText[1].setText(`Points: ${this.registry.get("points")}`);

@@ -1,6 +1,6 @@
 import "phaser";
 import { menuScene } from "./scenes/mainMenu";
-import { optionsScene } from "./scenes/options";
+import { optionsScene } from "./scenes/Options";
 import { hudScene } from "./scenes/HUD";
 import { gameScene } from "./scenes/snakeGame";
 import { pauseScene } from "./scenes/pauseScreen";
@@ -14,10 +14,10 @@ const config: GameConfig = {
         parent: "game",
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.FIT,
-        width: 1300,
-        height: 650,
+        width: 640,
+        height: 640,
     },
-    scene: [menuScene, optionsScene, hudScene, creditScene, gameScene, pauseScene, gameOverScene],
+    scene: [menuScene, optionsScene, creditScene, gameScene, pauseScene, gameOverScene],
     //optionsScene, hudScene, creditScene, gameScene, pauseScene, gameOverScene],
     input: {
         keyboard: true
