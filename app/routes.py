@@ -2,7 +2,7 @@
 # written as Python functions, called view functions. View functions are mapped to one or more route URLs so that Flask
 # knows what logic to execute when a client requests a given URL.
 
-from flask import render_template, url_for, request, session, redirect, flash
+from flask import render_template, url_for, request, session, redirect, flash, Response
 from flask_pymongo import PyMongo
 import bcrypt  # added layer of security for arbitrary (weak) passwords provided by user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -24,6 +24,11 @@ app.config[
 mongo = PyMongo(app)
 
 
+@app.route("/hello")
+def hello():
+    return 'Hello, World!'
+
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -31,6 +36,7 @@ def index():
     #     return 'You are logged in as ' + session['username']
 
     return render_template('index.html', title='Home')
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
