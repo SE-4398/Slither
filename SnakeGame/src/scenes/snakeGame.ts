@@ -59,16 +59,19 @@ export class gameScene extends Phaser.Scene{
             case 4:
                 //Need to do somthing to make sure the image is cenetered or the image needs to be 
                 //Keeped to adher to certain dimensions
-                this.add.image(0, 0, "userPicture");
+                //Update to make sure it works
+                this.add.image(0, 0, "userPicture").setOrigin(0);
                 break;
         }
         
+        
+
         let pauseKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TAB);
         pauseKey.on('down', function(key, event){
-            event.stopPropagation();
-            this.scene.pause();    //Problem here
+            this.scene.pause();    
             this.scene.launch("pauseScene");
-        });
+            event.stopPropagation();
+        }, this);
 
         //this.displayScore = this.add.text(200, 100, "Score:", {font: "16px Courier ", fill: "#0f0"});
         
@@ -80,6 +83,8 @@ export class gameScene extends Phaser.Scene{
             this.scene.start("optionsScene") });
         */
     }
+
+    
 
 
 }

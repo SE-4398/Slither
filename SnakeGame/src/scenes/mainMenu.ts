@@ -48,6 +48,6 @@ export class menuScene extends Phaser.Scene{
         this.registry.set("modKills", 0);
         this.registry.set("preyKilled", 0);
         this.registry.set("rubyGot", 0);
-        this.registry.set("whichBackGround", 4);
+        this.registry.set("whichBackGround", 1);
     }
 }

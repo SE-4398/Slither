@@ -16,10 +16,11 @@ export class optionsScene extends Phaser.Scene{
     }
 
     preload(): void {
-        this.load.image('background', 'assets/background.png'); //Fix
+        //this.load.image('background', 'assets/background.png'); //Fix
     }
 
     create(): void {
+        /*
         let background = this.add.sprite();
 
         this.title = this.add.text(300, 100, 'Settings & Options', { fontSize: 60 });
@@ -141,5 +142,6 @@ export class optionsScene extends Phaser.Scene{
 
 
       }
+      */
     }
 }

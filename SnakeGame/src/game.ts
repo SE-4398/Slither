@@ -1,6 +1,6 @@
 import "phaser";
 import { menuScene } from "./scenes/mainMenu";
-import { optionsScene } from "./scenes/Options";
+import { optionsScene } from "./scenes/options";
 import { hudScene } from "./scenes/HUD";
 import { gameScene } from "./scenes/snakeGame";
 import { pauseScene } from "./scenes/pauseScreen";
