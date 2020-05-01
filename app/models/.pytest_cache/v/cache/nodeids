@@ -1,0 +1,5 @@
+[
+  "test_gameSchema.py::TestGame::test_get_all",
+  "test_gameSchema.py::TestGame::test_name",
+  "test_userSchema.py::test_user"
+]
