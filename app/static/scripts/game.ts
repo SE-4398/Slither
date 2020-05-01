@@ -14,7 +14,7 @@ const config: GameConfig = {
         parent: "game",
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.FIT,
-        width: 640,
+        width: 1200,
         height: 640,
     },
     scene: [menuScene, optionsScene, creditScene, gameScene, pauseScene, gameOverScene],
