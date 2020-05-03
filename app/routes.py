@@ -2,7 +2,9 @@
 # written as Python functions, called view functions. View functions are mapped to one or more route URLs so that Flask
 # knows what logic to execute when a client requests a given URL.
 
-from flask import render_template, url_for, request, session, redirect, flash, Response
+import os
+from flask import render_template, url_for, request, session, redirect, flash, Response, jsonify, json
+from json import loads, dumps
 from flask_pymongo import PyMongo
 import bcrypt  # added layer of security for arbitrary (weak) passwords provided by user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -16,6 +18,7 @@ from app.models.loginUserSchema import RegisterForm
 
 Bootstrap(app)
 
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.config['SECRET_KEY'] = 'dev'
 app.config['MONGO_DBNAME'] = 'slither'
 app.config[
@@ -24,19 +27,21 @@ app.config[
 mongo = PyMongo(app)
 
 
-@app.route("/hello")
-def hello():
-    return 'Hello, World!'
-
-
 @app.route('/')
-@app.route('/index')
+@app.route('/index', methods=['GET', 'POST'])
 def index():
     # if 'username' in session:
     #     return 'You are logged in as ' + session['username']
 
     return render_template('index.html', title='Home')
 
+
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    # if 'username' in session:
+    #     return 'You are logged in as ' + session['username']
+
+    return render_template('search.html', title='Search')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -76,5 +81,4 @@ def register():
 @app.route('/slither')
 def slither():
     return render_template('slither.html', title='Slither')
-
 
