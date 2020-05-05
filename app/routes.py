@@ -13,8 +13,8 @@ from flask_login import LoginManager, UserMixin, login_required, login_user, log
 from flask_bootstrap import Bootstrap
 from app import app
 
-from app.models.registerUserSchema import LoginForm
-from app.models.loginUserSchema import RegisterForm
+from app.models.loginUserSchema import LoginForm
+from app.models.registerUserSchema import RegisterForm
 
 Bootstrap(app)
 
