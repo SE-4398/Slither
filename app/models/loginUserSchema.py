@@ -13,8 +13,7 @@ from wtforms.validators import DataRequired, Length, Email, ValidationError, Inp
 
 
 # class required to represent form. inherits from FlaskForm
-
-class RegisterForm(FlaskForm):
-    email = StringField('email', validators=[InputRequired(), Email(message='Invalid email'), Length(max=50)])
+class LoginForm(FlaskForm):
     username = StringField('username', validators=[InputRequired(), Length(min=4, max=15)])
     password = PasswordField('password', validators=[InputRequired(), Length(min=8, max=80)])
+    remember = BooleanField('remember me')
