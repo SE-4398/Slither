@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a1233de-6acb-4fe7-8943-4414b54a85ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/static/data/games.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/data/statesOld.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/scripts/list_collections.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/data/states.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/data/statesNew.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/dist/bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/scripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/scripts/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/scenes/options.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/scenes/options.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/scenes/snakeGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/scenes/snakeGame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/scripts/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/scripts/slitherGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/scripts/slitherGame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/slither.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/slither.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +27,8 @@
         <option value="Python Script" />
         <option value="HTML File" />
         <option value="TypeScript File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -55,11 +59,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mongo" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -77,11 +82,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\src" />
       <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\templates" />
       <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\static\data" />
       <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\node_modules\@types\node" />
       <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\static\scripts" />
-      <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\data" />
@@ -211,7 +216,8 @@
       <workItem from="1588394827318" duration="5128000" />
       <workItem from="1588509050755" duration="363000" />
       <workItem from="1588509436995" duration="2231000" />
-      <workItem from="1588511677720" duration="15180000" />
+      <workItem from="1588511677720" duration="20759000" />
+      <workItem from="1588650578185" duration="8893000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit after clone github. failed to merge previous times">
       <created>1585190985903</created>
@@ -311,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588371976381</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Search implementation completed. Async moved to own page so not overlapping gallery.">
+      <created>1588535181790</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1588535181790</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,14 +385,15 @@
     <MESSAGE value="Webpack implementation. Successfully ran npm run watch on templates/static/js/index.js. Critical that command ran from inside templates/static directory. Gaining understanding of file structure and associated files necessary to make webpack work." />
     <MESSAGE value="Flask + Webpack integration completed. Successfully compiled Typescript with no errors and started Flask server to display game.ts in web browser. Navigation working as well." />
     <MESSAGE value="Search Box implementation using async/await, regex and template literals. Formatting of match-list pending. Appears but black on black hard to see." />
-    <option name="LAST_COMMIT_MESSAGE" value="Search Box implementation using async/await, regex and template literals. Formatting of match-list pending. Appears but black on black hard to see." />
+    <MESSAGE value="Search implementation completed. Async moved to own page so not overlapping gallery." />
+    <option name="LAST_COMMIT_MESSAGE" value="Search implementation completed. Async moved to own page so not overlapping gallery." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588509481524">
+    <state x="414" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588654118806">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588509481524" />
+    <state x="414" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588654118806" />
     <state x="2334" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586472779691" />
     <state x="720" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588394754164">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -397,40 +411,44 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588099293256" />
-    <state x="0" y="88" key="CommitChangelistDialog2" timestamp="1588371973946">
+    <state x="0" y="88" key="CommitChangelistDialog2" timestamp="1588535178651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="88" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588371973946" />
+    <state x="0" y="88" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588535178651" />
     <state x="2457" y="118" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586297667042" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1587510065655">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587510065655" />
-    <state x="740" y="264" key="FileChooserDialogImpl" timestamp="1588213962039">
+    <state x="740" y="264" key="FileChooserDialogImpl" timestamp="1588537971833">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="264" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588213962039" />
+    <state x="740" y="264" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588537971833" />
     <state x="2660" y="264" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588041634203" />
-    <state width="1877" height="213" key="GridCell.Tab.0.bottom" timestamp="1588534807378">
+    <state width="1860" height="213" key="GridCell.Tab.0.bottom" timestamp="1588657764624">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588534807378" />
+    <state width="1860" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588657764624" />
     <state width="1340" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588287532576" />
-    <state width="1877" height="213" key="GridCell.Tab.0.center" timestamp="1588534807378">
+    <state width="1860" height="213" key="GridCell.Tab.0.center" timestamp="1588657764624">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="213" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588534807378" />
+    <state width="1860" height="213" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588657764624" />
     <state width="1340" height="213" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588287532576" />
-    <state width="1877" height="213" key="GridCell.Tab.0.left" timestamp="1588534807378">
+    <state width="1860" height="213" key="GridCell.Tab.0.left" timestamp="1588657764624">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="213" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588534807378" />
+    <state width="1860" height="213" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588657764624" />
     <state width="1340" height="213" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588287532575" />
-    <state width="1877" height="213" key="GridCell.Tab.0.right" timestamp="1588534807378">
+    <state width="1860" height="213" key="GridCell.Tab.0.right" timestamp="1588657764624">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="213" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588534807378" />
+    <state width="1860" height="213" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588657764624" />
     <state width="1340" height="213" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588287532576" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1588653779427">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588653779427" />
     <state x="528" y="225" key="MultipleFileMergeDialog" timestamp="1586296709566">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -448,39 +466,43 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="846" y="435" key="VCS.EditChangelistDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587001769235" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1588371984365">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1588535205035">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588371984365" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588535205035" />
     <state x="2472" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586297672175" />
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1588534243255">
+    <state x="803" y="292" width="532" height="455" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1588654229973">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588534243255" />
+    <state x="803" y="292" width="532" height="455" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588654229973" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1588539525381">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588539525381" />
     <state x="2588" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1586469855278">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="668" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586296589768" />
     <state x="2588" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586469855278" />
-    <state x="670" y="323" key="git4idea.merge.GitPullDialog" timestamp="1588283657170">
+    <state x="670" y="323" key="git4idea.merge.GitPullDialog" timestamp="1588535371989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="670" y="323" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588283657170" />
+    <state x="670" y="323" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588535371989" />
     <state x="2590" y="323" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586469868040" />
     <state x="760" y="421" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1588360319100">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="760" y="421" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588360319100" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588340430715">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588538040149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588340430715" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588538040149" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588042106133" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SlitherG$pytest_for_test_gameSchema_TestGame.coverage" NAME="pytest for test_gameSchema.TestGame Coverage Results" MODIFIED="1587504567946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models" />
     <SUITE FILE_PATH="coverage/SlitherG$index_html.dat" NAME="index.html Coverage Results" MODIFIED="1586471005343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="WipCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/SlitherG$Flask.coverage" NAME="Flask Coverage Results" MODIFIED="1588534783552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SlitherG$Flask.coverage" NAME="Flask Coverage Results" MODIFIED="1588659688577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SlitherG$pytest_in_test_userSchema_py.coverage" NAME="pytest in test_userSchema.py Coverage Results" MODIFIED="1587505800388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models" />
   </component>
 </project>
