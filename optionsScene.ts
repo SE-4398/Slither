@@ -1,4 +1,4 @@
-/* Options.ts
+/* optionsScene.ts
  * Developer: Asa Murphy
  * Date: 04/17/2020
  *
@@ -33,8 +33,10 @@
        //Buttons
        let easyButton = this.add.text(0,60, "Easy", {font: "15px Courier ", fill: "#0f0"});
            easyButton.setInteractive();
+
        let mediumButton = this.add.text(0, 80, "Medium", {font: "15px Courier ", fill: "#0f0"});
            mediumButton.setInteractive();
+
        let hardButton = this.add.text(0,100, "Hard", {font: "15px Courier ", fill: "#0f0"});
            hardButton.setInteractive();
 
@@ -53,12 +55,25 @@
        //Buttons
        let background1Button = this.add.text(0,260, "Background 1", {font: "15px Courier ", fill: "#0f0"});
            background1Button.setInteractive();
+           background1Button.on('pointerdown', () => { this.registry.set('whichBackGround', 1); });
+
        let background2Button = this.add.text(0, 280, "Background 2", {font: "15px Courier ", fill: "#0f0"});
            background2Button.setInteractive();
+           background2Button.on('pointerdown', () => { this.registry.set('whichBackGround', 2); });
+
        let background3Button = this.add.text(0,300, "Background 3", {font: "15px Courier ", fill: "#0f0"});
            background3Button.setInteractive();
+           background3Button.on('pointerdown', () => { this.registry.set('whichBackGround', 3); });
 
-       let backButton = this.add.text(150,340, "return", {font: "16px Courier ", fill: "#0f0"});
+       let background4Button = this.add.text(0,320, "Background 4", {font: "15px Courier ", fill: "#0f0"});
+           background4Button.setInteractive();
+           background4Button.on('pointerdown', () => { this.registry.set('whichBackGround', 4); });
+
+       let tutorialButton = this.add.text(0,360, "View Tutorial", {font: "15px Courier ", fill: "#0f0"});
+           tutorialButton.setInteractive();
+           tutorialButton.on('pointerdown', () => {this.scene.start("tutorialScene"); })
+
+       let backButton = this.add.text(150,380, "return", {font: "16px Courier ", fill: "#0f0"});
            backButton.setInteractive();
            backButton.on('pointerdown', () => {this.scene.start("menuScene"); });
      }
