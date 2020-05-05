@@ -23,7 +23,7 @@ var optionsScene = /** @class */ (function (_super) {
     optionsScene.prototype.init = function () {
     };
     optionsScene.prototype.preload = function () {
-        this.load.image("slitherLogoFull", "src/assets/Slither_Logo.png");
+        this.load.image("slitherLogoFull", "./static/assets/Slither_Logo.png");
     };
     optionsScene.prototype.create = function () {
         var _this = this;

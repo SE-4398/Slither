@@ -1,3 +1,17 @@
+//install mongodb native JavaScript driver: npm i mongodb
+
+var mongoUtil = require( 'mongoUtil' );
+
+mongoUtil.connectToServer( function( err, client ) {
+  if (err) console.log(err);
+  // start the rest of your app here
+} );
+
+var db = mongoUtil.getDb();
+
+db.collection( 'users' ).find();
+
+//adrian started here
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -23,12 +37,12 @@ var gameScene = /** @class */ (function (_super) {
     gameScene.prototype.init = function () {
     };
     gameScene.prototype.preload = function () {
-        this.load.image("userPicture", "src/assets/userPicture.jpg");
-        this.load.image("desertTiles", "src/assets/desert_1_0_7.png");
-        this.load.tilemapTiledJSON("backGround1", "src/assets/desert.json");
-        this.load.image("rockAndGrassTiles", "src/assets/mountain_landscape.png");
-        this.load.tilemapTiledJSON("backGround2", "src/assets/forest.json");
-        this.load.tilemapTiledJSON("backGround3", "src/assets/rock.json");
+        this.load.image("userPicture", "/assets/userPicture.jpg");
+        this.load.image("desertTiles", "/assets/desert_1_0_7.png");
+        this.load.tilemapTiledJSON("backGround1", "/assets/desert.json");
+        this.load.image("rockAndGrassTiles", "/assets/mountain_landscape.png");
+        this.load.tilemapTiledJSON("backGround2", "/assets/forest.json");
+        this.load.tilemapTiledJSON("backGround3", "/assets/rock.json");
     };
     gameScene.prototype.create = function () {
         var map;
@@ -51,7 +65,7 @@ var gameScene = /** @class */ (function (_super) {
                 layer = map.createStaticLayer("Tile Layer 1", tiles, 0, 0);
                 break;
             case 4:
-                this.load.image("userPicture", "src/assets/userPicture.jpg");
+                this.load.image("userPicture", "/assets/userPicture.jpg");
                 break;
         }
         this.displayScore = this.add.text(200, 100, "Score:", { font: "16px Courier ", fill: "#0f0" });
