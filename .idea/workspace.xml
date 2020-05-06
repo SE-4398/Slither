@@ -60,7 +60,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
-    <property name="ts.external.directory.path" value="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/app/node_modules/typescript/lib" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -71,19 +71,19 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/static/assets" />
+      <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\data" />
+      <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app" />
+      <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\templates" />
+      <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\static" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\src" />
       <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\templates" />
       <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\static\data" />
       <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\node_modules\@types\node" />
       <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\static\scripts" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\data" />
-      <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app" />
-      <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\templates" />
-      <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\static" />
-      <recent name="C:\Users\WYNI\Documents\CS4398_SoftwareEngineeringProject\SlitherG\app\static\css" />
     </key>
   </component>
   <component name="RunManager" selected="Flask server.Flask">
@@ -123,13 +123,12 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_gameSchema.TestGame&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in C:/Users/WYNI/Documents/CS4398_SoftwareEngineeringProject/SlitherG/app/models/test_userSchema.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in /Users/mesutapil/Desktop/Texas State University/CS4398/Slither/app/models/test_userSchema.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="SlitherG" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -140,7 +139,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;$PROJECT_DIR$/app/models/test_userSchema.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
@@ -152,11 +150,11 @@
       <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="JavaScript Debug.register.html" />
       <item itemvalue="Python tests.pytest for test_gameSchema.TestGame" />
-      <item itemvalue="Python tests.pytest in C:/Users/WYNI/Documents/CS4398_SoftwareEngineeringProject/SlitherG/app/models/test_userSchema.py" />
+      <item itemvalue="Python tests.pytest in /Users/mesutapil/Desktop/Texas State University/CS4398/Slither/app/models/test_userSchema.py" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest in C:/Users/WYNI/Documents/CS4398_SoftwareEngineeringProject/SlitherG/app/models/test_userSchema.py" />
+        <item itemvalue="Python tests.pytest in /Users/mesutapil/Desktop/Texas State University/CS4398/Slither/app/models/test_userSchema.py" />
         <item itemvalue="Python tests.pytest for test_gameSchema.TestGame" />
         <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.register.html" />
@@ -210,6 +208,7 @@
       <workItem from="1588650578185" duration="9776000" />
       <workItem from="1588690215245" duration="10420000" />
       <workItem from="1588743923684" duration="5326000" />
+
     </task>
     <task id="LOCAL-00001" summary="initial commit after clone github. failed to merge previous times">
       <created>1585190985903</created>
@@ -334,45 +333,47 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/static/objects/npc.js" />
-        <option value="$PROJECT_DIR$/app/static/objects/bigBird.js" />
-        <option value="$PROJECT_DIR$/app/static/objects/cow.js" />
-        <option value="$PROJECT_DIR$/app/static/scenes/options.js" />
-        <option value="$PROJECT_DIR$/app/static/scenes/mainMenu.js" />
-        <option value="$PROJECT_DIR$/app/static/scenes/pauseScreen.js" />
-        <option value="$PROJECT_DIR$/app/static/scenes/creditScene.js" />
-        <option value="$PROJECT_DIR$/app/static/scenes/HUD.js" />
-        <option value="$PROJECT_DIR$/app/static/scenes/snakeGame.js" />
-        <option value="$PROJECT_DIR$/app/static/scenes/gameOver.js" />
-        <option value="$PROJECT_DIR$/app/static/objects/staticObject.js" />
-        <option value="$PROJECT_DIR$/app/static/objects/playerSnake.js" />
-        <option value="$PROJECT_DIR$/app/static/objects/mouse.js" />
-        <option value="$PROJECT_DIR$/app/static/objects/ruby.js" />
-        <option value="$PROJECT_DIR$/app/static/objects/badMouse.js" />
-        <option value="$PROJECT_DIR$/app/static/objects/bombTurtle.js" />
-        <option value="$PROJECT_DIR$/app/static/objects/bird.js" />
-        <option value="$PROJECT_DIR$/app/static/objects/mongoose.js" />
-        <option value="$PROJECT_DIR$/app/static/scenes/HUD.js.map" />
-        <option value="$PROJECT_DIR$/app/static/scenes/options.js.map" />
-        <option value="$PROJECT_DIR$/app/static/scenes/pauseScreen.js.map" />
-        <option value="$PROJECT_DIR$/app/static/scenes/snakeGame.js.map" />
-        <option value="$PROJECT_DIR$/app/static/scenes/creditScene.js.map" />
-        <option value="$PROJECT_DIR$/app/static/scenes/gameOver.js.map" />
-        <option value="$PROJECT_DIR$/app/static/scenes/mainMenu.js.map" />
-        <option value="$PROJECT_DIR$/app/static/objects/staticObject.js.map" />
-        <option value="$PROJECT_DIR$/app/static/objects/cow.js.map" />
-        <option value="$PROJECT_DIR$/app/static/objects/mongoose.js.map" />
-        <option value="$PROJECT_DIR$/app/static/objects/npc.js.map" />
-        <option value="$PROJECT_DIR$/app/static/objects/playerSnake.js.map" />
-        <option value="$PROJECT_DIR$/app/static/objects/bird.js.map" />
-        <option value="$PROJECT_DIR$/app/static/objects/ruby.js.map" />
+        <option value="$PROJECT_DIR$/app/static/scripts/game.js.map" />
+        <option value="$PROJECT_DIR$/app/static/scripts/game.js" />
         <option value="$PROJECT_DIR$/app/static/objects/mouse.js.map" />
-        <option value="$PROJECT_DIR$/app/static/objects/bigBird.js.map" />
-        <option value="$PROJECT_DIR$/app/static/objects/badMouse.js.map" />
+        <option value="$PROJECT_DIR$/app/static/objects/mouse.js" />
         <option value="$PROJECT_DIR$/app/static/objects/bombTurtle.js.map" />
+        <option value="$PROJECT_DIR$/app/static/objects/bombTurtle.js" />
+        <option value="$PROJECT_DIR$/app/static/objects/mongoose.js.map" />
+        <option value="$PROJECT_DIR$/app/static/objects/mongoose.js" />
+        <option value="$PROJECT_DIR$/app/static/objects/playerSnake.js.map" />
+        <option value="$PROJECT_DIR$/app/static/objects/playerSnake.js" />
+        <option value="$PROJECT_DIR$/app/static/objects/ruby.js.map" />
+        <option value="$PROJECT_DIR$/app/static/objects/ruby.js" />
+        <option value="$PROJECT_DIR$/app/static/objects/bird.js.map" />
+        <option value="$PROJECT_DIR$/app/static/objects/bird.js" />
+        <option value="$PROJECT_DIR$/app/static/objects/cow.js.map" />
+        <option value="$PROJECT_DIR$/app/static/objects/cow.js" />
+        <option value="$PROJECT_DIR$/app/static/objects/staticObject.js.map" />
+        <option value="$PROJECT_DIR$/app/static/objects/staticObject.js" />
+        <option value="$PROJECT_DIR$/app/static/objects/bigBird.js.map" />
+        <option value="$PROJECT_DIR$/app/static/objects/bigBird.js" />
+        <option value="$PROJECT_DIR$/app/static/objects/npc.js.map" />
+        <option value="$PROJECT_DIR$/app/static/objects/npc.js" />
+        <option value="$PROJECT_DIR$/app/static/objects/badMouse.js.map" />
+        <option value="$PROJECT_DIR$/app/static/objects/badMouse.js" />
+        <option value="$PROJECT_DIR$/app/static/scenes/pauseScreen.js.map" />
+        <option value="$PROJECT_DIR$/app/static/scenes/pauseScreen.js" />
+        <option value="$PROJECT_DIR$/app/static/scenes/HUD.js.map" />
+        <option value="$PROJECT_DIR$/app/static/scenes/HUD.js" />
+        <option value="$PROJECT_DIR$/app/static/scenes/snakeGame.js.map" />
+        <option value="$PROJECT_DIR$/app/static/scenes/snakeGame.js" />
+        <option value="$PROJECT_DIR$/app/static/scenes/creditScene.js.map" />
+        <option value="$PROJECT_DIR$/app/static/scenes/creditScene.js" />
+        <option value="$PROJECT_DIR$/app/static/scenes/gameOver.js.map" />
+        <option value="$PROJECT_DIR$/app/static/scenes/gameOver.js" />
+        <option value="$PROJECT_DIR$/app/static/scenes/mainMenu.js.map" />
+        <option value="$PROJECT_DIR$/app/static/scenes/mainMenu.js" />
+        <option value="$PROJECT_DIR$/app/static/scenes/options.js.map" />
+        <option value="$PROJECT_DIR$/app/static/scenes/options.js" />
       </list>
     </option>
   </component>
@@ -509,8 +510,10 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SlitherG$pytest_for_test_gameSchema_TestGame.coverage" NAME="pytest for test_gameSchema.TestGame Coverage Results" MODIFIED="1587504567946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models" />
+
     <SUITE FILE_PATH="coverage/SlitherG$index_html.dat" NAME="index.html Coverage Results" MODIFIED="1586471005343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="WipCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/SlitherG$Flask.coverage" NAME="Flask Coverage Results" MODIFIED="1588794309179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+
     <SUITE FILE_PATH="coverage/SlitherG$pytest_in_test_userSchema_py.coverage" NAME="pytest in test_userSchema.py Coverage Results" MODIFIED="1587505800388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models" />
   </component>
 </project>
