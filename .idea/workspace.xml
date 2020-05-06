@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a1233de-6acb-4fe7-8943-4414b54a85ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/static/assets/newgamebutton.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/169a467c-df63-4226-86a3-3874bcc215f9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/assets/creditsbutton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/assets/optionsbutton.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/scenes/mainMenu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/scenes/mainMenu.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -208,7 +207,7 @@
       <workItem from="1588511677720" duration="20759000" />
       <workItem from="1588650578185" duration="9776000" />
       <workItem from="1588690215245" duration="10420000" />
-      <workItem from="1588761850230" duration="161000" />
+      <workItem from="1588761850230" duration="361000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit after clone github. failed to merge previous times">
       <created>1585190985903</created>
