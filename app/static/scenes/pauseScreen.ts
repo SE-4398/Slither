@@ -14,7 +14,7 @@ export class pauseScene extends Phaser.Scene {
     }
 
     preload(): void {
-        this.load.image("backGround", "src/assets/Caza2_SliftUmmonAlbum.png");
+        this.load.image("backGround", "/assets/Caza2_SliftUmmonAlbum.png");
     }
 
     create(): void {

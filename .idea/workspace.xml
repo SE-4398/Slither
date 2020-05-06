@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="3a1233de-6acb-4fe7-8943-4414b54a85ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/loginUserSchema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/loginUserSchema.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/registerUserSchema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/registerUserSchema.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/dist/bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/scenes/creditScene.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/scenes/creditScene.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/scenes/options.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/scenes/options.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/scenes/pauseScreen.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/scenes/pauseScreen.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/scenes/snakeGame.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/scenes/snakeGame.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/scripts/slitherGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/scripts/slitherGame.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -211,7 +213,7 @@
       <workItem from="1588509436995" duration="2231000" />
       <workItem from="1588511677720" duration="20759000" />
       <workItem from="1588650578185" duration="9776000" />
-      <workItem from="1588690215245" duration="3876000" />
+      <workItem from="1588690215245" duration="10420000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit after clone github. failed to merge previous times">
       <created>1585190985903</created>
@@ -325,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588660351754</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Google reCaptcha implementation for user login. Token successfully passed. Debugging to console.">
+      <created>1588694787700</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1588694787700</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,7 +397,8 @@
     <MESSAGE value="Search Box implementation using async/await, regex and template literals. Formatting of match-list pending. Appears but black on black hard to see." />
     <MESSAGE value="Search implementation completed. Async moved to own page so not overlapping gallery." />
     <MESSAGE value="MongoDB userOptions retrieved from database and document projection successfully to slither.html. MongoDB documents stored as BSON objects and use dot notation to access elements of array. Debugging output still included." />
-    <option name="LAST_COMMIT_MESSAGE" value="MongoDB userOptions retrieved from database and document projection successfully to slither.html. MongoDB documents stored as BSON objects and use dot notation to access elements of array. Debugging output still included." />
+    <MESSAGE value="Google reCaptcha implementation for user login. Token successfully passed. Debugging to console." />
+    <option name="LAST_COMMIT_MESSAGE" value="Google reCaptcha implementation for user login. Token successfully passed. Debugging to console." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -413,10 +423,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588099293256" />
-    <state x="0" y="88" key="CommitChangelistDialog2" timestamp="1588660348711">
+    <state x="0" y="88" key="CommitChangelistDialog2" timestamp="1588694786086">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="88" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588660348711" />
+    <state x="0" y="88" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588694786086" />
     <state x="2457" y="118" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586297667042" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1587510065655">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -427,25 +437,25 @@
     </state>
     <state x="740" y="264" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588537971833" />
     <state x="2660" y="264" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588041634203" />
-    <state width="1860" height="213" key="GridCell.Tab.0.bottom" timestamp="1588694700054">
+    <state width="1860" height="213" key="GridCell.Tab.0.bottom" timestamp="1588726841772">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588694700054" />
+    <state width="1860" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588726841772" />
     <state width="1340" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588287532576" />
-    <state width="1860" height="213" key="GridCell.Tab.0.center" timestamp="1588694700054">
+    <state width="1860" height="213" key="GridCell.Tab.0.center" timestamp="1588726841772">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="213" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588694700054" />
+    <state width="1860" height="213" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588726841772" />
     <state width="1340" height="213" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588287532576" />
-    <state width="1860" height="213" key="GridCell.Tab.0.left" timestamp="1588694700054">
+    <state width="1860" height="213" key="GridCell.Tab.0.left" timestamp="1588726841772">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="213" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588694700054" />
+    <state width="1860" height="213" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588726841772" />
     <state width="1340" height="213" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588287532575" />
-    <state width="1860" height="213" key="GridCell.Tab.0.right" timestamp="1588694700054">
+    <state width="1860" height="213" key="GridCell.Tab.0.right" timestamp="1588726841772">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="213" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588694700054" />
+    <state width="1860" height="213" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588726841772" />
     <state width="1340" height="213" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588287532576" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1588653779427">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -468,10 +478,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="846" y="435" key="VCS.EditChangelistDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587001769235" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1588660366161">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1588694790111">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588660366161" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588694790111" />
     <state x="2472" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586297672175" />
     <state x="803" y="292" width="532" height="455" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1588654229973">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -486,10 +496,10 @@
     </state>
     <state x="668" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586296589768" />
     <state x="2588" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586469855278" />
-    <state x="670" y="323" key="git4idea.merge.GitPullDialog" timestamp="1588535371989">
+    <state x="670" y="323" key="git4idea.merge.GitPullDialog" timestamp="1588711379112">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="670" y="323" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588535371989" />
+    <state x="670" y="323" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588711379111" />
     <state x="2590" y="323" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586469868040" />
     <state x="760" y="421" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1588360319100">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -504,7 +514,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SlitherG$pytest_for_test_gameSchema_TestGame.coverage" NAME="pytest for test_gameSchema.TestGame Coverage Results" MODIFIED="1587504567946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models" />
     <SUITE FILE_PATH="coverage/SlitherG$index_html.dat" NAME="index.html Coverage Results" MODIFIED="1586471005343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="WipCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/SlitherG$Flask.coverage" NAME="Flask Coverage Results" MODIFIED="1588693860132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SlitherG$Flask.coverage" NAME="Flask Coverage Results" MODIFIED="1588727007154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SlitherG$pytest_in_test_userSchema_py.coverage" NAME="pytest in test_userSchema.py Coverage Results" MODIFIED="1587505800388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models" />
   </component>
 </project>
