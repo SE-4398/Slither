@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a1233de-6acb-4fe7-8943-4414b54a85ec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/dist/bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/scenes/creditScene.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/scenes/creditScene.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/scenes/options.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/scenes/options.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/scenes/pauseScreen.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/scenes/pauseScreen.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/scenes/snakeGame.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/scenes/snakeGame.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/scripts/slitherGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/scripts/slitherGame.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,11 +14,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
         <option value="TypeScript File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -59,7 +54,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -214,6 +209,7 @@
       <workItem from="1588511677720" duration="20759000" />
       <workItem from="1588650578185" duration="9776000" />
       <workItem from="1588690215245" duration="10420000" />
+      <workItem from="1588743923684" duration="5326000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit after clone github. failed to merge previous times">
       <created>1585190985903</created>
@@ -432,10 +428,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587510065655" />
-    <state x="740" y="264" key="FileChooserDialogImpl" timestamp="1588537971833">
+    <state x="740" y="264" key="FileChooserDialogImpl" timestamp="1588779443024">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="264" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588537971833" />
+    <state x="740" y="264" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588779443024" />
     <state x="2660" y="264" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588041634203" />
     <state width="1860" height="213" key="GridCell.Tab.0.bottom" timestamp="1588726841772">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -514,7 +510,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SlitherG$pytest_for_test_gameSchema_TestGame.coverage" NAME="pytest for test_gameSchema.TestGame Coverage Results" MODIFIED="1587504567946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models" />
     <SUITE FILE_PATH="coverage/SlitherG$index_html.dat" NAME="index.html Coverage Results" MODIFIED="1586471005343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="WipCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/SlitherG$Flask.coverage" NAME="Flask Coverage Results" MODIFIED="1588727007154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SlitherG$Flask.coverage" NAME="Flask Coverage Results" MODIFIED="1588794309179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SlitherG$pytest_in_test_userSchema_py.coverage" NAME="pytest in test_userSchema.py Coverage Results" MODIFIED="1587505800388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models" />
   </component>
 </project>
