@@ -13,7 +13,7 @@ export class optionsScene extends Phaser.Scene {
     }
 
     preload(): void {
-        this.load.image("slitherLogoFull", "src/assets/Slither_Logo.png");
+        this.load.image("slitherLogoFull", "/static/assets/Slither_Logo.png");
     }
 
     create(): void {

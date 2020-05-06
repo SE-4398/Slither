@@ -24,7 +24,6 @@ var MYLIBRARY = MYLIBRARY || (function () {
     };
 }());
 
-
 const config: GameConfig = {
     type: Phaser.AUTO,
     scale: {

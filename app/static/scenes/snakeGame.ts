@@ -24,12 +24,12 @@ export class gameScene extends Phaser.Scene {
     }
 
     preload(): void {
-        this.load.image("userPicture", "src/assets/userPicture.jpg");
-        this.load.image("desertTiles", "src/assets/desert_1_0_7.png")
-        this.load.tilemapTiledJSON("backGround1", "src/assets/desert.json");
-        this.load.image("rockAndGrassTiles", "src/assets/mountain_landscape.png");
-        this.load.tilemapTiledJSON("backGround2", "src/assets/forest.json");
-        this.load.tilemapTiledJSON("backGround3", "src/assets/rock.json");
+        this.load.image("userPicture", "/static/assets/userPicture.jpg");
+        this.load.image("desertTiles", "/static/assets/desert_1_0_7.png")
+        this.load.tilemapTiledJSON("backGround1", "/static/assets/desert.json");
+        this.load.image("rockAndGrassTiles", "/static/assets/mountain_landscape.png");
+        this.load.tilemapTiledJSON("backGround2", "/static/assets/forest.json");
+        this.load.tilemapTiledJSON("backGround3", "/static/assets/rock.json");
     }
 
     create(): void {
@@ -55,7 +55,7 @@ export class gameScene extends Phaser.Scene {
                 layer = map.createStaticLayer("Tile Layer 1", tiles, 0, 0);
                 break;
             case 4:
-                this.load.image("userPicture", "src/assets/userPicture.jpg");
+                this.load.image("userPicture", "/static/assets/userPicture.jpg");
                 break;
         }
 

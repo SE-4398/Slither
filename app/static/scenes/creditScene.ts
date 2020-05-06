@@ -14,7 +14,7 @@ export class creditScene extends Phaser.Scene {
     }
 
     preload(): void {
-        this.load.image("logo", "src/assets/logo.png");
+        this.load.image("logo", "/static/assets/logo.png");
     }
 
     create(): void {
