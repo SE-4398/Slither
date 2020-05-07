@@ -1,13 +1,8 @@
-<?php
-define('SITE_KEY','6LcM7PIUAAAAAP44D2ApBtrK0Tt8Taa3ljkFv4of');
-define('SECRET_KEY','6LcM7PIUAAAAAETjjrwHLA01cbdUz5aZG3qzj997');
-?>
-
 <!DOCTYPE html>
+
 {% import "bootstrap/wtf.html" as wtf %}
 <html xmlns="">
 <head>
-
     <title>Slither</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,14 +16,10 @@ define('SECRET_KEY','6LcM7PIUAAAAAETjjrwHLA01cbdUz5aZG3qzj997');
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LcM7PIUAAAAAP44D2ApBtrK0Tt8Taa3ljkFv4of"></script>
-
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 </head>
-
-
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-
+<body>
 
 {#{% extends 'base.html' %}#}
 {% extends "bootstrap/base.html" %}
@@ -45,18 +36,9 @@ define('SECRET_KEY','6LcM7PIUAAAAAETjjrwHLA01cbdUz5aZG3qzj997');
         {{ form.hidden_tag() }}
         {{ wtf.form_field(form.username) }}
         {{ wtf.form_field(form.password) }}
-        {{ wtf.form_field(form.remember) }}
-        <input type="text" id="g-recaptcha-response" name="g-recaptcha-response"/><br>
+<!--        {{ wtf.form_field(form.remember) }}-->
+        {{ wtf.form_field(form.recaptcha) }}
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
-    </form>
-    <script>
-        grecaptcha.ready(function () {
-            grecaptcha.execute('6LcM7PIUAAAAAP44D2ApBtrK0Tt8Taa3ljkFv4of', {action: 'homepage'}).then(function (token) {
-                console.log(token);
-                document.getElementById('g-recaptcha-response').value = token;
-            });
-        });
-    </script>
 
 </div>
 <div class="w3-container w3-center ">
@@ -78,4 +60,7 @@ define('SECRET_KEY','6LcM7PIUAAAAAETjjrwHLA01cbdUz5aZG3qzj997');
 {% endwith %}
 
 {% endblock %}
+</body>
 
+
+</html>

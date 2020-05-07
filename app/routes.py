@@ -24,6 +24,14 @@ app.config['MONGO_DBNAME'] = 'slither'
 app.config[
     'MONGO_URI'] = "mongodb+srv://root:SAdmin1@mongo-dev-db-0e9wb.mongodb.net/slither?retryWrites=true&w=majority"
 
+# RECAPTCHA CONFIG
+
+app.config['RECAPTCHA_USE_SSL']= False
+app.config['RECAPTCHA_PUBLIC_KEY']='6LcY4fMUAAAAANLurRHyNf20GmwxEMhZJkiG9Yut'
+app.config['RECAPTCHA_PRIVATE_KEY']='6LcY4fMUAAAAADni_xsvdrYbWSmLA1EeFlymacy8'
+app.config['RECAPTCHA_OPTIONS']= {'theme':'black'}
+
+
 mongo = PyMongo(app)
 
 @app.route('/')
@@ -57,8 +65,8 @@ def login():
                                          {'name': 1, 'difficulty': 1, 'snakeskin': 1, 'background': 1, '_id': 0})
                 for result in userOptions:
                     session['userOptions'] = str(result)
-                flash(session['userOptions'])
-                flash('You are logged in as ' + session['username'])
+                # flash(session['userOptions'])
+                flash('You are already logged in as ' + session['username'])
                 return redirect(url_for('index'))
             else:
                 flash("Invalid username or password")
