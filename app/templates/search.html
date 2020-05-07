@@ -200,10 +200,11 @@
 
         <div class="search-container" style="position: absolute; left:1000px;  top:20px; ">
             <form action="search">
-                <input id="search" type="text" placeholder="search games" name="search">
+                <input id="search" autocomplete="off" type="text" placeholder="search games" name="search">
                 <button onclick="Redirect()"><i class="fa fa-search"></i></button>
+                <div id="match-list"></div>
             </form>
-            <div id="match-list"></div>
+
             <script src="../static/scripts/main.js"></script>
         </div>
         <div class="menu-content" style="position: absolute; left:1750px;  top:20px;">
