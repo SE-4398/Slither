@@ -30,6 +30,8 @@ export class pauseScene extends Phaser.Scene{
         let resumeButton = this.add.text(320, 256, "resume", {font: "16px Courier ", fill: "#0f0"});
         resumeButton.setInteractive();
         resumeButton.on('pointerdown', () => {
-            this.scene.start("gameScene"); });
+            this.scene.resume("gameScene");
+            this.scene.stop();
+        });
     }
 }

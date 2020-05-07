@@ -6,22 +6,32 @@ import { gameScene } from "./scenes/snakeGame";
 import { pauseScene } from "./scenes/pauseScreen";
 import { gameOverScene } from "./scenes/gameOver";
 import { creditScene } from "./scenes/creditScene";
+import { tutorialScene } from "./scenes/tutorialScene";
 import GameConfig = Phaser.Types.Core.GameConfig;
+
 
 const config: GameConfig = {
     type: Phaser.AUTO,
     scale: {
         parent: "game",
         mode: Phaser.Scale.FIT,
-        autoCenter: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
         width: 640,
         height: 640,
     },
-    scene: [menuScene, optionsScene, creditScene, gameScene, pauseScene, gameOverScene],
+    scene: [menuScene, optionsScene, creditScene, gameScene, pauseScene, gameOverScene, tutorialScene],
     //optionsScene, hudScene, creditScene, gameScene, pauseScene, gameOverScene],
+    render: { pixelArt: true, antialias: false },
     input: {
         keyboard: true
-    }
+    },
+    physics: {
+        default: "arcade",
+        arcade: {
+          //gravity: { y: 0 },
+          debug: false
+        }
+      }
 };
 
 export class Game extends Phaser.Game {

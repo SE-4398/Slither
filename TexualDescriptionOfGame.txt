@@ -1,0 +1,14 @@
+Structuor of the game
+
+The game is composed of several file : src, scenes, objects, assets, dist.
+The entry point of the game is game.ts that calls on and runs the scenes
+in the scenes file. These scenes call upon each other and may run in
+parallel. These scenes then create the objects defined in the onjects
+file for uses during the game. All of this code is then bundled via 
+webpack into a single Javascript file called bundle.js that is placed 
+inside the dist folder to be read by the html file.
+
+No major algorithms critical for the systems behavior has been implemented
+with in the game. 
+
+The Phaser 3 framwork was used in creating the gamse as is.  
