@@ -1,5 +1,0 @@
-{
-  "test_gameSchema.py::TestGame::test_get_all": true,
-  "test_gameSchema.py::TestGame::test_name": true,
-  "test_userSchema.py::test_user": true
-}
