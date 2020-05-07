@@ -1,11 +1,14 @@
-export class menuScene extends Phaser.Scene {
+
+
+export class menuScene extends Phaser.Scene{
     private logo;
     private gameSettings;
 
     constructor() {
         super({
-            key: "menuScene"
+           key: "menuScene"
         });
+
     }
 
     init(): void {
@@ -17,28 +20,26 @@ export class menuScene extends Phaser.Scene {
     }
 
     create(): void {
+
         //this.backGround = this.add.image(0, 0, "backGround").setOrigin(0);
-        let newGameButton = this.add.image(150,100,"../static/assets/newgamebutton.png");
-        //let newGameButton = this.add.text(150, 100, "Start Game",
-           // {font: "16px Courier ", fill: "#0f0"});
+        let newGameButton = this.add.text(150,100, "Start Game", {font: "16px Courier ", fill: "#0f0"});
         newGameButton.setInteractive();
         newGameButton.on('pointerdown', () => {
-            this.scene.start("gameScene");
-        });
+            this.scene.start("gameScene"); });
 
-        //let optionsButton = this.add.text(150, 150, "Options", {font: "16px Courier ", fill: "#0f0"});
-        let optionsButton = this.add.image(150,150,"../static/assets/optionsbutton.png");
+        let optionsButton = this.add.text(150,150, "Options", {font: "16px Courier ", fill: "#0f0"});
         optionsButton.setInteractive();
         optionsButton.on('pointerdown', () => {
-            this.scene.start("optionsScene");
+            //this.scene.start("optionsScene");
+            this.scene.launch("optionsScene");
+            this.scene.sleep();
+            event.stopPropagation();
         });
 
-        //let creditsButton = this.add.text(150, 200, "Credits", {font: "16px Courier ", fill: "#0f0"});
-        let creditsButton = this.add.image(150,150,"..static/assets/creditsbutton.png")
+        let creditsButton = this.add.text(150,200, "Credits", {font: "16px Courier ", fill: "#0f0"});
         creditsButton.setInteractive();
         creditsButton.on('pointerdown', () => {
-            this.scene.start("creditScene");
-        });
+            this.scene.start("creditScene"); });
     }
 
     /**
@@ -46,12 +47,14 @@ export class menuScene extends Phaser.Scene {
      * Here we initialize our variables with a key.
      */
     private initRegistry(): void {
+        //all should start from 0
         this.registry.set("points", 0);
         this.registry.set("time", 0);
         this.registry.set("difficulty", 0);
         this.registry.set("modKills", 0);
         this.registry.set("preyKilled", 0);
         this.registry.set("rubyGot", 0);
-        this.registry.set("whichBackGround", 4);
+        this.registry.set("whichBackGround", 2);
+        this.registry.set('skin', 2);
     }
 }

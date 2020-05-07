@@ -23,7 +23,7 @@ app.config['SECRET_KEY'] = 'dev'
 app.config['MONGO_DBNAME'] = 'slither'
 app.config[
     'MONGO_URI'] = "mongodb+srv://root:SAdmin1@mongo-dev-db-0e9wb.mongodb.net/slither?retryWrites=true&w=majority"
-
+mongo = PyMongo(app)
 # RECAPTCHA CONFIG
 
 app.config['RECAPTCHA_USE_SSL']= False
@@ -32,13 +32,14 @@ app.config['RECAPTCHA_PRIVATE_KEY']='6LcY4fMUAAAAADni_xsvdrYbWSmLA1EeFlymacy8'
 app.config['RECAPTCHA_OPTIONS']= {'theme':'black'}
 
 
-mongo = PyMongo(app)
+
 
 @app.route('/')
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     # if 'username' in session:
     #     return 'You are logged in as ' + session['username']
+    session['load'] = 0
 
     return render_template('index.html', title='Home')
 
@@ -98,9 +99,9 @@ def register():
 @app.route('/slither')
 def slither():
     user_details = {
-        'name': session['username'],
-        'email': session['email'],
-        'userOptions': session['userOptions']
+        # 'name': session['username'],
+        # 'email': session['email'],
+        # 'userOptions': session['userOptions']
         # 'snakeskin':  session['snakeskin'],
         # 'background':  session['background']
     }
