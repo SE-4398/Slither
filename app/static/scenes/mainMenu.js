@@ -37,7 +37,10 @@ var menuScene = /** @class */ (function (_super) {
         var optionsButton = this.add.text(150, 150, "Options", { font: "16px Courier ", fill: "#0f0" });
         optionsButton.setInteractive();
         optionsButton.on('pointerdown', function () {
-            _this.scene.start("optionsScene");
+            //this.scene.start("optionsScene");
+            _this.scene.launch("optionsScene");
+            _this.scene.sleep();
+            event.stopPropagation();
         });
         var creditsButton = this.add.text(150, 200, "Credits", { font: "16px Courier ", fill: "#0f0" });
         creditsButton.setInteractive();
@@ -50,13 +53,15 @@ var menuScene = /** @class */ (function (_super) {
      * Here we initialize our variables with a key.
      */
     menuScene.prototype.initRegistry = function () {
+        //all should start from 0
         this.registry.set("points", 0);
         this.registry.set("time", 0);
         this.registry.set("difficulty", 0);
         this.registry.set("modKills", 0);
         this.registry.set("preyKilled", 0);
         this.registry.set("rubyGot", 0);
-        this.registry.set("whichBackGround", 4);
+        this.registry.set("whichBackGround", 2);
+        this.registry.set('skin', 2);
     };
     return menuScene;
 }(Phaser.Scene));
