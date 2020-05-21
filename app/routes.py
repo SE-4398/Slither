@@ -32,8 +32,6 @@ app.config['RECAPTCHA_PRIVATE_KEY']='6LcY4fMUAAAAADni_xsvdrYbWSmLA1EeFlymacy8'
 app.config['RECAPTCHA_OPTIONS']= {'theme':'black'}
 
 
-
-
 @app.route('/')
 @app.route('/index', methods=['GET', 'POST'])
 def index():
@@ -42,7 +40,6 @@ def index():
     session['load'] = 0
 
     return render_template('index.html', title='Home')
-
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
@@ -106,3 +103,4 @@ def slither():
         # 'background':  session['background']
     }
     return render_template('slither.html', user=user_details)
+
