@@ -1,7 +1,7 @@
-export class pauseScene extends Phaser.Scene {
 
-    private gameSetting;
-    private backGround;
+
+export class pauseScene extends Phaser.Scene{
+    private pauseMenu;
 
     constructor() {
         super({
@@ -14,14 +14,24 @@ export class pauseScene extends Phaser.Scene {
     }
 
     preload(): void {
-        this.load.image("backGround", "/assets/Caza2_SliftUmmonAlbum.png");
+        
     }
 
     create(): void {
-        this.backGround = this.add.image(0, 0, "backGround").setOrigin(0);
-        //let testButton = this.add.text(150,100, "test", {font: "16px Courier ", fill: "#0f0"});
-        //testButton.setInteractive();
-        //testButton.on('pointerdown', () => {
-        //    this.scene.start("optionsScene") });
+        //: Phaser.GameObjects.Graphics
+        //x: this.sys.canvas.width / 2,
+        //y: this.sys.canvas.height - 40,
+        this.pauseMenu = this.add.graphics();
+        this.pauseMenu.fillStyle(0x0000FF, 1);
+        this.pauseMenu.fillRect(192, 192, 320, 320);
+
+        //Maybe change to switch
+        //or change start to resume
+        let resumeButton = this.add.text(320, 256, "resume", {font: "16px Courier ", fill: "#0f0"});
+        resumeButton.setInteractive();
+        resumeButton.on('pointerdown', () => {
+            this.scene.resume("gameScene");
+            this.scene.stop();
+        });
     }
 }
