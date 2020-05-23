@@ -23,8 +23,20 @@
         {{ wtf.form_field(form.email) }}
         {{ wtf.form_field(form.username) }}
         {{ wtf.form_field(form.password) }}
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button><br>
+
     </form>
 </div>
+<!--<div>-->
+<!--        <button class="btn btn-lg btn-primary btn-block" onclick="{{ url_for('login') }}" type="submit">Back</button>-->
+<!--    </div>-->
+
 
 {% endblock %}
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>

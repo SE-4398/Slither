@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <title>SLITHER</title>
-<meta charset="UTF-8">
+<meta content="text/javascript" charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="static/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
-<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
 <style>
+    a:link {
+        text-decoration: none;
+    }
+
+    a:visited {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    a:active {
+        text-decoration: none;
+    }
+
     body, h1, h2, h3, h4, h5, h6 {
         font-family: "Lato", sans-serif;
     }
@@ -27,6 +43,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+
     }
 
     /* First image (Logo. Full height) */
@@ -51,10 +68,6 @@
         letter-spacing: 10px;
     }
 
-    .w3-hover-opacity {
-        cursor: pointer;
-    }
-
     /* Turn off parallax scrolling for tablets and phones */
     @media only screen and (max-device-width: 1600px) {
         .bgimg-1, .bgimg-2, .bgimg-3 {
@@ -63,21 +76,19 @@
         }
     }
 
-
     .login-form > form {
         width: 250px;
         margin: 25px auto;
         font-size: 18px;
     }
 
-    input[type="text"],
     input[type="password"] {
         width: 240px;
         height: 30px;
         border: 0px;
         outline: none;
         box-shadow: inset 0 0 10px #eee;
-        border-radius: 3px;
+        /*border-radius: 3px;*/
         margin-bottom: 10px;
         margin-top: 5px;
         font-size: 16px;
@@ -101,7 +112,6 @@
         background: orange;
 
     }
-
 
     .gridcontainer > div {
         background: white;
@@ -149,52 +159,68 @@
         height: 100%;
         object-fit: cover;
         padding: 1em;
+    }
+
+    .search-container {
+        float: right;
+    }
+
+    input[type=text] {
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+        width: 350px;
+        height: 30px;
+        outline: none;
+        box-shadow: inset 0 0 10px #eee;
+        margin-bottom: 10px;
 
     }
 
+    .search-container button {
+        float: right;
+        padding: 6px 10px;
+        margin-top: 8px;
+        margin-right: 16px;
+        background: #ddd;
+        font-size: 10px;
+        border: none;
+        cursor: pointer;
+    }
 
 </style>
 
 <body onunload="WriteCookie()">
 
+
 <!-- Navbar (sit on top) -->
 <div class="w3-container">
+    <div class="w3-bar " id="myNavbar">
+        <a href="index" class="w3-bar-item">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" height="80" width="250" align="left"> </a>
 
-    <div class="w3-bar w3-border-bottom" id="myNavbar">
-        <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
-           href="javascript:void(0);"
-           onclick="toggleFunction()" title="Toggle Navigation Menu"> <i class="fa fa-bars"></i>
-        </a>
-        <a href="home" class="w3-bar-item"><img src="{{ url_for('static', filename='images/logo.png') }}"
-                                                height="80"
-                                                width="250" align="left"> </a>
-
-        <div class="search-container" style="position: absolute; left:500px;  top:20px; ">
-            <form action="/action_page.php">
-                <input type="text" placeholder="Search.." name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
+        <div class="search-container" style="position: absolute; left:1000px;  top:20px; ">
+            <form id="searchInput" action="search">
+                <input type="text" id="search" placeholder="search games" name="search">
+                <button onclick="Redirect()"><i class="fa fa-search"></i></button>
             </form>
+            <!--            <div id="match-list"></div>-->
+            <script src="../static/scripts/main.js"></script>
         </div>
-        <div class="menu-content">
+        <div class="menu-content" style="position: absolute; left:1750px;  top:20px;">
             <a href="{{ url_for('register') }}" id="Register"
-               class="w3-right w3-margin-right w3-bar-item w3-button w3-hide-small"><i
-                    class="fas fa-user-plus"></i> REGISTER </a>
+               class="w3-right w3-margin-right w3-bar-item w3-button w3-hide-small"><i class="fa fa-user-plus"></i>
+                REGISTER </a>
         </div>
 
-        <div class="menu-content">
+        <div class="menu-content" style="position: absolute; left:1650px;  top:20px;">
             <a href="{{ url_for('login') }}" id="Log-In"
                class="w3-right w3-margin-right w3-bar-item w3-button w3-hide-small"><i
                     class="fa fa-unlock-alt"></i> LOGIN </a>
         </div>
     </div>
 
-    <!-- Navbar on small screens -->
-    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-        <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-        <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
-        <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-
-    </div>
 </div>
 
 <!-- First Parallax Image with Logo Text -->
@@ -459,15 +485,12 @@
 
         </div>
     </div>
-
-
 </div>
 
 <!-- Container -->
 <div class="w3-content w3-container w3-padding-64" id="about">
     <div class="w3-light-grey">
     </div>
-</div>
 </div>
 
 <div class="w3-row w3-center w3-dark-grey w3-padding-16">
@@ -485,14 +508,6 @@
 
 </div>
 
-<!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-    <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-        <img id="img01" class="w3-image">
-        <p id="caption" class="w3-opacity w3-large"></p>
-    </div>
-</div>
 
 <!-- Third Parallax  -->
 <div class="bgimg-3 w3-display-container w3-opacity-min">
@@ -534,13 +549,35 @@
     </div>
 </div>
 
+<ul class="list-group" id="list"></ul>
+
+
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
     <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
 
 </footer>
 
+
 <script>
+    //async search bar with javascript
+    function mySearchFunction() {
+        var input, filter, ul, li, item, i, txtValue;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("stateList");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            item = li[i];
+            txtValue = item.textContent || item.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+
     // Modal Image Gallery
     function onClick(element) {
         document.getElementById("img01").src = element.src;
@@ -596,42 +633,45 @@
     })
 </script>
 
-<script language="JavaScript" type="text/javascript" src="cookies.js"></script>
+<script language="JavaScript" type="text/javascript" src='cookies.js'></script>
+
 <script language="JavaScript" type="text/javascript">
-    <!--
-    function WriteCookie() {
-        if (document.signinform.user.value == "") {
-            return;
-        }
-        cookievalue = escape(document.signinform.user.value) + ";";
-        document.cookie = "name=" + cookievalue;
-        document.write("Setting Cookies : " + "name=" + cookievalue);
-        var data = document.signinform.user.value;
-        var expDate = getExpDate(7, 0, 0);
-        setCookie("name", data, expDate);
+    //param1: cookie name, param2: cookie value, param3: daysToLive
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toGMTString();
+        document.cookie = cname + "=" + cvalue + "; " + expires;
     }
-
-    //-->
 </script>
+
 <script type="text/javascript">
-    <!--
-    function ReadCookie() {
-        var allcookies = document.cookie;
-        document.write("All Cookies : " + allcookies);
-
-        // Get all the cookies pairs in an array
-        cookiearray = allcookies.split(';');
-
-        // Now take key value pair out of this array
-        for (var i = 0; i < cookiearray.length; i++) {
-            var name = cookiearray[i].split('=')[0];
-            value = cookiearray[i].split('=')[1];
-            document.write("Key is : " + name + " and Value is : " + value);
-        }
+    function Redirect() {
+        var x = document.getElementById("search").value;
+        setCookie("s", x, 2);
+        window.location.href = 'search';
     }
+</script>
 
-    //-->
+<script>
+    // Get a reference to the form so that we can set up an event handler
+    // for its submit event
+    var form = document.getElementById("searchInput");
+
+    // Now, set up a submit event handler for the form
+    form.addEventListener("submit", function () {
+
+        // Only when the form has been submitted do you want the textbox value
+        var inputTest = document.getElementById('userInput').value;
+        localStorage.setItem('objectToPass', inputTest);
+
+        window.location = "search";
+
+    });
+
 </script>
 
 </body>
+
+
 </html>
