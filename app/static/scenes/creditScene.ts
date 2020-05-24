@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-export class creditScene extends Phaser.Scene {
-=======
-
 
 export class creditScene extends Phaser.Scene{
->>>>>>> master
 
     private gameSetting;
     private logo;
@@ -24,14 +19,6 @@ export class creditScene extends Phaser.Scene{
     }
 
     create(): void {
-<<<<<<< HEAD
-        this.logo = this.add.image(0, 0, "logo");
-        let backButton = this.add.text(150, 100, "return", {font: "16px Courier ", fill: "#0f0"});
-        backButton.setInteractive();
-        backButton.on('pointerdown', () => {
-            this.scene.start("menuScene");
-        });
-=======
         this.logo = this.add.image(0, 70, "logo");
 
         let textline1 = this.add.text(0, 110, 'We would like to take a moment to thank the team of developers!', {font: "15px Courier ", fill: "#0f0"});
@@ -46,7 +33,6 @@ export class creditScene extends Phaser.Scene{
         backButton.setInteractive();
         backButton.on('pointerdown', () => {
             this.scene.start("menuScene"); });
->>>>>>> master
     }
 
 }

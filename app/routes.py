@@ -23,11 +23,9 @@ app.config['SECRET_KEY'] = 'dev'
 app.config['MONGO_DBNAME'] = 'slither'
 app.config[
     'MONGO_URI'] = "mongodb+srv://root:SAdmin1@mongo-dev-db-0e9wb.mongodb.net/slither?retryWrites=true&w=majority"
-<<<<<<< HEAD
 
-=======
+
 mongo = PyMongo(app)
->>>>>>> master
 # RECAPTCHA CONFIG
 
 app.config['RECAPTCHA_USE_SSL']= False
@@ -47,10 +45,7 @@ def index():
 
     return render_template('index.html', title='Home')
 
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     if 'username' in session:
@@ -102,8 +97,6 @@ def register():
 # @app.route('/slither')
 # def slither():
 #     return render_template('slither.html', title='Slither')
-<<<<<<< HEAD
-=======
 
 @app.route('/slither')
 def slither():
@@ -111,18 +104,6 @@ def slither():
         # 'name': session['username'],
         # 'email': session['email'],
         # 'userOptions': session['userOptions']
-        # 'snakeskin':  session['snakeskin'],
-        # 'background':  session['background']
-    }
-    return render_template('slither.html', user=user_details)
->>>>>>> master
-
-@app.route('/slither')
-def slither():
-    user_details = {
-        'name': session['username'],
-        'email': session['email'],
-        'userOptions': session['userOptions']
         # 'snakeskin':  session['snakeskin'],
         # 'background':  session['background']
     }

@@ -18,7 +18,3 @@ class LoginForm(FlaskForm):
     password = PasswordField('password', validators=[InputRequired(), Length(min=8, max=80)])
     recaptcha = RecaptchaField()
     remember = BooleanField('remember me')
-<<<<<<< HEAD
-=======
-
->>>>>>> master
