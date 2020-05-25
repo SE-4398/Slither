@@ -29,7 +29,7 @@ local_settings.py
 .idea/**/dbnavigator.xml
 
 # Virtual environment
-/venv/
+venv/
 ENV/
 
 # Distribution / packaging
