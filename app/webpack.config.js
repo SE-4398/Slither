@@ -11,6 +11,12 @@ module.exports = {
         //path folder containing bundle
         path: __dirname + '/static/dist',
         filename: 'bundle.js',
+        sourceMapFilename: "bundle.js.map"
+    },
+    performance: {
+        maxAssetSize: 100000,
+        maxEntrypointSize: 100000,
+        hints: "warning"
     },
     // special loaders for typescript and phaser so webpack knows to use them
     module: {
@@ -28,5 +34,7 @@ module.exports = {
         alias: {
             phaser: phaser
         }
-    }
+    },
+    devtool: "source-map"
+
 };
