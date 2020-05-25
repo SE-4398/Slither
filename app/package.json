@@ -1,21 +1,29 @@
 {
   "scripts": {
-    "build": "node_modules/.bin/webpack -p --progress --config webpack.config.js",
+    "analyze": "source-map-explorer 'static/dist/*.js'",
+    "build_original": "node_modules/.bin/webpack -p --progress --config webpack.config.js",
+    "build": "webpack --mode production --config webpack.config.js",
     "dev": "webpack --mode development",
     "debug": "webpack --devtool source-map --mode development",
     "dev-build": "node_modules/.bin/webpack --progress -d --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "node_modules/.bin/webpack --progress -d --config webpack.config.js --watch"
   },
-  "dependencies": {
+  "devDependencies": {
     "copy-webpack-plugin": "^5.1.1",
     "expose-loader": "^0.7.5",
     "mongodb": "^3.5.7",
     "phaser": "^3.23.0",
+    "source-map-explorer": "^2.4.2",
+    "terser-webpack-plugin": "^2.2.1",
     "ts-loader": "^7.0.0",
     "typescript": "^3.8.3",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack": "^4.43.0"
+  },
+  "dependencies": {
+    "terser-webpack-plugin": "^2.2.1",
+    "webpack": "^4.43.0"
   },
   "compilerOptions": {
     "types": [
