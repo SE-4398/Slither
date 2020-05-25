@@ -6,6 +6,7 @@ var phaser = path.join(pathToPhaser, 'dist/phaser.js');
 
 module.exports = {
     //game root - path working
+    mode: 'development',
     entry: __dirname + '/static/scripts/game.ts',
     output: {
         //path folder containing bundle
@@ -35,6 +36,5 @@ module.exports = {
             phaser: phaser
         }
     },
-    devtool: "source-map"
-
+    devtool: "source-map",
 };
