@@ -86,38 +86,59 @@ export class gameScene extends Phaser.Scene{
         //this.physics.add.sprite(500, 550, 'greenSkin', 'GreenSnakeHead_up');
 
 
+        this.staticObjectNames = ["tree", "spire", "boulder"];
+        this.staticObjects = this.physics.add.group();
+
+        this.preyMouse = this.physics.add.group();
+        let graphics = this.add.graphics();
+        graphics.fillStyle(0x000000, 1);
+        //graphics.moveTo(0, 0);
+        graphics.fillRect(0, 0, 100, 25); //Last two width and height
+        //graphics.closePath();
+        //graphics.fillPath();
+
+        this.displayScore = this.add.text(0, 0, 'Score: 0', {font: "16px Courier ", fill: "#0f0"});
+
         this.player = new playerSnakePart(this);
 
         this.staticObjectNames = ["tree", "spire", "boulder"];
         this.staticObjects = this.physics.add.group();
 
         this.preyMouse = this.physics.add.group();
-        
 
         this.setDifficultySettings();
 
-        //for(let i = 0; i < this.player.getSnakeLength(); i++){
-            //this.physics.add.collider(this.staticObjects, this.player.getSnakeBody()[i]);
-        //}
+        /*
+        let testMouse = new mouse(this, 100, 100, "masterAtlas", "Mouse_Idle").setCollideWorldBounds(true, 5);
+        testMouse.play('idleMouse');
+        //testMouse.setVisible(true);
+        //this.preyMouse.add(testMouse);
+        testMouse.setPosition(320, 320);
+        //testMouse.setRandomPosition(0,0, 640, 640);
+
+        let test = this.physics.add.sprite(100, 100, "masterAtlas", "Mouse_Idle").setCollideWorldBounds(true, 5);
+        test.play("idleMouse");
+        this.preyMouse.add(test);
+        test.setRandomPosition(0,0, 640, 640);
+        */
+
+
+
         this.physics.add.collider(this.staticObjects, this.player.getSnakeBody()[0], () =>{
             console.log("collusion");
         });
-        this.physics.add.collider(this.preyMouse, this.player.getSnakeBody()[0], () =>{
-            console.log("collusion");
+
+
+        this.physics.add.collider(this.player.getSnakeBody()[0], this.preyMouse, (thing) =>{
+            console.log("collusion with mouse!");
+            this.preyMouse.killAndHide(mouse);
+            // @ts-ignore
+            thing.body.enable = false;
+            this.increaseScore(1);
         });
 
-        //this.displayScore = this.add.text(200, 100, "Score:", {font: "16px Courier ", fill: "#0f0"});
-        
-        /*
-        this.backGround = this.add.image(0, 0, "backGround").setOrigin(0);
-        let testButton = this.add.text(150,100, "test", {font: "16px Courier ", fill: "#0f0"});
-        testButton.setInteractive();
-        testButton.on('pointerdown', () => {
-            this.scene.start("optionsScene") });
-        */
     }
 
-    
     update(time): void {
 
         if (this.currentTime === 0) {
@@ -127,15 +148,12 @@ export class gameScene extends Phaser.Scene{
             if (time - this.currentTime > 200) {
               this.player.move(this);
               this.currentTime = time;
-
-              
-              this.moveMouse(this.preyMouse);
+              //this.moveMouse(this.preyMouse);
             }
             this.player.handleInput();
             
         }
 
-        
     }
 
     private setDifficultySettings(): void{
@@ -145,21 +163,18 @@ export class gameScene extends Phaser.Scene{
                 //Easy
                 //StaticObjects
                 for(let i = 0; i < 5; i++){
-                    let spriteToUse = this.staticObjectNames[Math.floor(Math.random() * this.staticObjectNames.length)]
+                    let spriteToUse = this.staticObjectNames[Math.floor(Math.random() *
+                        this.staticObjectNames.length)]
                     let obstical = this.physics.add.sprite(16, 16, "masterAtlas", spriteToUse);
                     this.staticObjects.add(obstical);
                     obstical.setRandomPosition(0, 0, 640, 640);
                 }
                 for(let j = 0; j < 5; j++){
-                    //let newMouse = new mouse(this, 100, 100, "masterAtlas", "Mouse_Idle");
-                    //newMouse.setRandomPosition(0,0, 640, 640);
-                    //newMouse.update();
-                    let test = this.physics.add.sprite(100, 100, "masterAtlas", "Mouse_Idle").setCollideWorldBounds(true, 5);
-                    test.play("idleMouse");
-                    this.preyMouse.add(test);
-                    test.setRandomPosition(0,0, 640, 640);
+                    let newMouse = new mouse(this, 100, 100, "masterAtlas",
+                        "Mouse_Idle").setCollideWorldBounds(true, 5);
+                    newMouse.play("idleMouse");
+                    newMouse.setRandomPosition(0,0, 640, 640);
                 }
-                
                 break;
             case 1:
                 //Medium
@@ -274,54 +289,17 @@ export class gameScene extends Phaser.Scene{
 
     }
 
-    private moveMouse(prey): void{
-        //randomeNumber > 0.5
-        for(let i = 0; i < prey.getLength(); i++){
-            let randomNumber = Math.random();
-            if(randomNumber > 0.5){
-                //We move up or down  
-                if(randomNumber > 0.75){
-                    //We move up
-                }
-                else{
-                    //We move Down
-                }
-            }else{
-                //We move left or right
-                if(randomNumber > 0.25){
-                    // We move left
-
-                }
-                else if(randomNumber > 0.10){
-                    //we move right
-                    this.changeMouseAnimation(prey.getChildren()[i], "right");
-                    prey.getChildren()[i].x += 5;
-                }
-                else{
-                    //Remains still
-                    this.changeMouseAnimation(prey.getChildren()[i], "stop");
-                }
-            }
-        }
-
+    private increaseScore(by) : void{
+        let currentScore = this.registry.get('points');
+        currentScore += by;
+        this.displayScore.setText('Score: ' + currentScore);
+        this.registry.set('points', currentScore);
     }
 
-    private changeMouseAnimation(mouse, direction): void{
-        switch(direction){
-            case "up":
-                mouse.play("")
-                break;
-            case "down":
-                break;
-            case "right":
-                mouse.play("rightMouse");
-                break;
-            case "left":
-                break;
-            case "stop":
-                mouse.play("idleMouse");
-                break;
-        }
+    private killMouse(group): void{
+        console.log("collusion with mouse!");
+        this.preyMouse.killAndHide(mouse);
+        group.body.enable = false;
+        this.increaseScore(1);
     }
-
 }

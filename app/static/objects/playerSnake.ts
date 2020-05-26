@@ -90,7 +90,6 @@ export class playerSnakePart {
     }
     
     private createSnakeAnimations(scene): void{
-        console.log(scene.registry.get('skin'));
         switch( scene.registry.get('skin') ){
             case 0:
                 //Green skin

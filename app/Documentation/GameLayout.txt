@@ -1,0 +1,114 @@
+Layout for snake game
+
+Main Menu:
+    Buttons:
+      New game
+      Options
+      Credits
+      Quit  //May need to be removed since it may accomplish nothing.
+
+New game:
+
+    Leads to the game...
+
+Options Screen:
+    Difficulty: 3 options :: Easy Medium Hard
+    Snakeskin: Button implementation to be determined(at least 3)
+    Background: Defaults (3?) Plus User defined skin if User logged in and
+                they have uploaded one.
+    //Other options may be added but above is minimum
+    Tutorial screen (Just text explaining stuff) toggle
+
+Credits Screen:
+    Static text or scrolling text. Lists dependences/references as well as
+    our names.
+
+Game:
+
+  Objects: Snake,
+
+  Parent Objects: foods, mobs(moving objects), Static Objects
+
+  Easy Setting: SRS 4.2.4 -a
+  Medium Setting: 4.2.4-b
+  Hard Setting: 4.2.4-c
+
+  Core functionality features:
+
+  Score: Player gains points by eating food or...
+
+  controls
+  {
+    w = "move up"
+    s = "move down"
+    a = "move left"
+    d = "move right"
+
+    p = "pause game" (Brings up Quit to main menu option or resume)
+  }
+
+  All entities will path around static obstacles.
+
+  Prey/Food Concepts
+  * Regular food (Snake grows by 1 and gains 1 point)
+    {All game modes}
+    Sprite - Mouse
+    Behavior - Idle animation while staying in one place. Slow and infrequent
+               random movement in a random direction. If possible, it will
+               flee when the snake approaches (Non-essential feature).
+
+  * Insta-Kill food (Snake dies, resulting in a game over, looks sorta like
+    normal food) {implemented in Hard Setting}
+    Sprite - Poison Mouse
+    Behavior -  Idle animation while staying in one place. Slow and infrequent
+               random movement in a random direction. If possible,
+               it will flee when the snake approaches (Non-essential feature).
+              EXCEPT IT KILLS THE SNAKE IF EATEN AND IT'S GAME OVER
+
+  * length-shortening food (snake looses length by 2 nodes)
+    {implemented in Medium & Hard settings}
+    Sprite - Bird
+    Behavior - Will enter the area via flight with its shadow viable on the
+               ground. It will slowly come in for a landing and rest on the
+               ground for a short period of time. It will flap its wings to
+               signal its preparation for flight.
+
+  *Super food (Snake grows by 1 and gains 5 points)
+  {In Medium(rare) and Hard}
+  Sprite - Cow
+  Behavior - Will Navigate towards some random placed grass to feed. Once it's
+             done, it will path find its way off screen.
+
+  *Super Rare food (Snake doesn't grow and gains 10 points)
+  {In Hard setting (rare)}
+  Sprite - Ruby
+  Behavior - Stays in the same place it's populated, and sparkles
+
+  -Randomly populates in game window after snake's head makes contact (eats)
+  -Static, they do not move, they do not expire on their own.
+
+  Mobs
+
+  *Mongoose
+  Behavior - It will actively hunt the snakes head to eat it. If it gets the head
+             the snake gets a game over, but if the snake causes the Mongoose
+             to run into its body, the Mongoose will get "knocked out" and play
+             its death animation.
+
+  *Big Bird
+  Behavior - Same as bird but will try to land around snake. If the snake
+             runs into it, they get a game over.
+
+  *Bomb Turtle - Re-skin of the cow with slight AI tweaks.
+  Behavior - It will slowly walk towards an obstacle that is randomly chosen.
+             If the snake runs into it, it'll explode and the player will get
+             a game over. The explosion of the bomb Turtle should cover a small
+             area around it. Say if the playing field is implemented as a square
+             grid, the explosion will cover an 3x3 grid with the turtle in the
+             middle. Feature can be scraped if it breaks something.
+
+   obstacle must not
+   - Not spawn in the same place repeatedly between games
+   - Must not spawn in such a way that the snake can not navigate around/through
+     them
+   - Must not spawn on top of food or mobs, and vice versa.
