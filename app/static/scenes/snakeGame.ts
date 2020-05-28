@@ -128,14 +128,7 @@ export class gameScene extends Phaser.Scene{
             console.log("collusion");
         });
 
-
-        this.physics.add.collider(this.player.getSnakeBody()[0], this.preyMouse, (thing) =>{
-            console.log("collusion with mouse!");
-            this.preyMouse.killAndHide(mouse);
-            // @ts-ignore
-            thing.body.enable = false;
-            this.increaseScore(1);
-        });
+        this.physics.add.collider(this.player.getSnakeBody()[0], this.preyMouse, this.killMouse, null, this);
 
     }
 
@@ -296,10 +289,10 @@ export class gameScene extends Phaser.Scene{
         this.registry.set('points', currentScore);
     }
 
-    private killMouse(group): void{
+    private killMouse(snakeHead, mouse): void{
         console.log("collusion with mouse!");
         this.preyMouse.killAndHide(mouse);
-        group.body.enable = false;
-        this.increaseScore(1);
+        mouse.body.enable = false;
+        this.increaseScore(this.preyMouse.getChildren()[0].kill());
     }
 }
