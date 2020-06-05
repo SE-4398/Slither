@@ -17,7 +17,7 @@ export class gameScene extends Phaser.Scene{
     private staticObjects;
     private staticObjectNames;
     private preyMouse;
-    
+    private mouseSpawnRate: number;
 
     constructor() {
         super({
@@ -36,10 +36,9 @@ export class gameScene extends Phaser.Scene{
         this.load.image("rockAndGrassTiles", "/static/assets/mountain_landscape.png");
         this.load.tilemapTiledJSON("backGround2", "/static/assets/forest.json");
         this.load.tilemapTiledJSON("backGround3", "/static/assets/rock.json");
-        //this.load.spritesheet({})
 
-        this.load.atlas('masterAtlas', '/static/assets/masterAtlas.png', '/static/assets/masterAtlasJson.json');
-        //this.load.atlas('greenSkin', 'src/assets/greenSnakeAtlas.png', 'src/assets/greenSnakeAtlas.json');
+        this.load.atlas('masterAtlas', '/static/assets/masterAtlas.png', '/static/assets/masterAtlas.json');
+
     }
 
     create(): void {
@@ -82,20 +81,13 @@ export class gameScene extends Phaser.Scene{
             event.stopPropagation();
         }, this);
 
-        //this.physics.add.sprite(500, 500, "masterAtlas", "spire").setCollideWorldBounds();
-        //this.physics.add.sprite(500, 550, 'greenSkin', 'GreenSnakeHead_up');
-
-
         this.staticObjectNames = ["tree", "spire", "boulder"];
         this.staticObjects = this.physics.add.group();
 
         this.preyMouse = this.physics.add.group();
         let graphics = this.add.graphics();
         graphics.fillStyle(0x000000, 1);
-        //graphics.moveTo(0, 0);
         graphics.fillRect(0, 0, 100, 25); //Last two width and height
-        //graphics.closePath();
-        //graphics.fillPath();
 
         this.displayScore = this.add.text(0, 0, 'Score: 0', {font: "16px Courier ", fill: "#0f0"});
 
@@ -104,31 +96,18 @@ export class gameScene extends Phaser.Scene{
         this.staticObjectNames = ["tree", "spire", "boulder"];
         this.staticObjects = this.physics.add.group();
 
-        this.preyMouse = this.physics.add.group();
+        this.preyMouse = this.physics.add.group({runChildUpdate: true});
 
+        this.createAnimations();
         this.setDifficultySettings();
-
-        /*
-        let testMouse = new mouse(this, 100, 100, "masterAtlas", "Mouse_Idle").setCollideWorldBounds(true, 5);
-        testMouse.play('idleMouse');
-        //testMouse.setVisible(true);
-        //this.preyMouse.add(testMouse);
-        testMouse.setPosition(320, 320);
-        //testMouse.setRandomPosition(0,0, 640, 640);
-
-        let test = this.physics.add.sprite(100, 100, "masterAtlas", "Mouse_Idle").setCollideWorldBounds(true, 5);
-        test.play("idleMouse");
-        this.preyMouse.add(test);
-        test.setRandomPosition(0,0, 640, 640);
-        */
-
-
 
         this.physics.add.collider(this.staticObjects, this.player.getSnakeBody()[0], () =>{
             console.log("collusion");
         });
 
         this.physics.add.collider(this.player.getSnakeBody()[0], this.preyMouse, this.killMouse, null, this);
+
+
 
     }
 
@@ -140,17 +119,34 @@ export class gameScene extends Phaser.Scene{
         else{
             if (time - this.currentTime > 200) {
               this.player.move(this);
+              this.moveMouses();
               this.currentTime = time;
-              //this.moveMouse(this.preyMouse);
+
             }
+
             this.player.handleInput();
-            
         }
 
     }
 
+    //Refactor names
+    private moveMouses(): Function{
+        let mouses = this.preyMouse.getChildren();
+        let randomTime: number;
+
+        for(let i = 0; i < this.preyMouse.getLength(); i++){
+            randomTime = mouse.randomTime(1000, 10000);
+            if(mouses[i].active){
+                this.time.delayedCall(randomTime, mouses[i].moveMouse(), null, this);
+            }
+
+        }
+        return;
+    }
+
+
     private setDifficultySettings(): void{
-        this.createAnimations();
+
         switch( this.registry.get("difficulty") ){
             case 0:
                 //Easy
@@ -165,7 +161,7 @@ export class gameScene extends Phaser.Scene{
                 for(let j = 0; j < 5; j++){
                     let newMouse = new mouse(this, 100, 100, "masterAtlas",
                         "Mouse_Idle").setCollideWorldBounds(true, 5);
-                    newMouse.play("idleMouse");
+                    //newMouse.play("idleMouse");
                     newMouse.setRandomPosition(0,0, 640, 640);
                 }
                 break;
@@ -231,7 +227,7 @@ export class gameScene extends Phaser.Scene{
             });
         
         var config3 = {
-            key: 'rightMouse',
+            key: 'leftMouse',
             frames: this.anims.generateFrameNumbers('walkingLeft', 
                 { start: 3, end: 0, first: 3 }),
             frameRate: 3,
@@ -270,15 +266,15 @@ export class gameScene extends Phaser.Scene{
                 //endFrame: 5
             });
         
-        var config4 = {
-            key: 'upMouse',
-            frames: this.anims.generateFrameNumbers('walkingUp', 
+        let config5 = {
+            key: 'downMouse',
+            frames: this.anims.generateFrameNumbers('walkingDown',
                 { start: 0, end: 3}),
             frameRate: 3,
             repeat: -1
         };        
         
-        this.anims.create(config4);
+        this.anims.create(config5);
 
     }
 

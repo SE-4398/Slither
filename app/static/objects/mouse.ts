@@ -1,9 +1,13 @@
 import {npc} from "./npc";
 
+
 export class mouse extends npc  {
     private gameScene;
+    //private chooseDirectionEvt;
+    //private chooseAnimEvt;
+    private moveEvent;
 
-    constructor(scene, x, y, texture, f){
+    constructor(scene, x, y, texture, f) {
         super(scene, x, y, texture, f);
         scene.preyMouse.add(this);
         scene.add.existing(this);
@@ -12,69 +16,92 @@ export class mouse extends npc  {
         this.scoreValue = 1 //Score of mouse
         // @ts-ignore
         //this.body.onWorldBounds = true;
-        //this.play('idleMouse');
+        this.play('idleMouse');
     }
 
-    preload(): void {
-        //this.createAnimations();
+    create(): void {
+
+
+
+
+        //this.scene.time.delayedCall(2000, this.moveMouse, null, this);
     }
 
     update(): void {
-        //this.play('idleMouse');
+        //Re-write this and turn it into a single event that'll
+        //Preform the entire movement action.S
+/*        this.time.addEvent({
+           delay: 1000,
+           callback: this.moveMouse(),
+           callbackScope: this,
+           loop: true
+        });
+*/
     }
 
-    /*
-    private changeMouseAnimation(mouse, direction): void{
-        switch(direction){
+    private moveMouse(): Function{
+        this.randomDirection();
+        this.changeMouseAnimation();
+        return;
+    }
+
+    private changeMouseAnimation(): Function{
+        console.log("we changed animation of a mouse");
+        switch(this.newDirection){
             case "up":
-                mouse.play("")
+                this.direction = "up";
+                this.play("upMouse", true);
                 break;
             case "down":
+                this.direction = "down";
+                this.play("downMouse", true);
                 break;
             case "right":
-                mouse.play("rightMouse");
+                this.direction = "right";
+                this.play("rightMouse", true);
                 break;
             case "left":
+                this.direction = "left";
+                this.play('leftMouse', true);
                 break;
             case "stop":
-                mouse.play("idleMouse");
+                this.direction = "stop";
+                this.play("idleMouse", true);
                 break;
         }
+        return;
     }
-    */
 
-    /*
-    private moveMouse(prey): void{
+    private randomDirection(): Function{
         //randomeNumber > 0.5
-        for(let i = 0; i < prey.getLength(); i++){
-            let randomNumber = Math.random();
-            if(randomNumber > 0.5){
-                //We move up or down
-                if(randomNumber > 0.75){
-                    //We move up
-                }
-                else{
-                    //We move Down
-                }
-            }else{
-                //We move left or right
-                if(randomNumber > 0.25){
-                    // We move left
-
-                }
-                else if(randomNumber > 0.10){
-                    //we move right
-                    this.changeMouseAnimation(prey.getChildren()[i], "right");
-                    prey.getChildren()[i].x += 5;
-                }
-                else{
-                    //Remains still
-                    this.changeMouseAnimation(prey.getChildren()[i], "stop");
-                }
+        console.log("we changed direction of a mouse");
+        let randomNumber = Math.random();
+        if(randomNumber > 0.5){
+            //We move up or down
+            if(randomNumber > 0.75){
+                //We move up
+                this.newDirection = "up";
+            }
+            else{
+                //We move Down
+                this.newDirection = "down";
+            }
+        }else{
+            //We move left or right
+            if(randomNumber > 0.25){
+                // We move left
+                this.newDirection = "left";
+            }
+            else if(randomNumber > 0.10){
+                //we move right
+                this.newDirection = "right";
+            }
+            else{
+                //Remains still
+                this.newDirection = "stop";
             }
         }
 
+        return;
     }
-    */
-
 }
