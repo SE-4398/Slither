@@ -107,7 +107,10 @@ export class gameScene extends Phaser.Scene{
 
         this.physics.add.collider(this.player.getSnakeBody()[0], this.preyMouse, this.killMouse, null, this);
 
-
+        //test
+        let n = new mouse(this, 100, 100, "masterAtlas",
+            "Mouse_Idle").setCollideWorldBounds(true, 5);
+        n.play("upMouse");
 
     }
 
@@ -133,10 +136,14 @@ export class gameScene extends Phaser.Scene{
     private moveMouses(): Function{
         let mouses = this.preyMouse.getChildren();
         let randomTime: number;
+        let randomValue:number;
 
         for(let i = 0; i < this.preyMouse.getLength(); i++){
-            randomTime = mouse.randomTime(1000, 10000);
-            if(mouses[i].active){
+            randomTime = mouse.randomTime(5000, 30000);
+            randomValue = mouse.randomTime(1, 10);
+
+            //% chance mouse will move
+            if(mouses[i].active && randomValue >= 7){
                 this.time.delayedCall(randomTime, mouses[i].moveMouse(), null, this);
             }
 
@@ -240,16 +247,16 @@ export class gameScene extends Phaser.Scene{
             'walkingUp',
             {
                 atlas: 'masterAtlas',
-                frame: 'Mouse_UpDown',
-                frameWidth: 39,
-                frameHeight: 23,
+                frame: 'mouse_upDown_corrected',
+                frameWidth: 23,
+                frameHeight: 48,
                 //endFrame: 5
             });
         
         var config4 = {
             key: 'upMouse',
             frames: this.anims.generateFrameNumbers('walkingUp', 
-                { start: 0, end: 3}),
+                { start: 1, end: 4}),
             frameRate: 3,
             repeat: -1
         };        
@@ -260,16 +267,16 @@ export class gameScene extends Phaser.Scene{
             'walkingDown',
             {
                 atlas: 'masterAtlas',
-                frame: 'Mouse_UpDown',
-                frameWidth: 39,
-                frameHeight: 23,
+                frame: 'mouse_upDown_corrected',
+                frameWidth: 23,
+                frameHeight: 48,
                 //endFrame: 5
             });
         
         let config5 = {
             key: 'downMouse',
             frames: this.anims.generateFrameNumbers('walkingDown',
-                { start: 0, end: 3}),
+                { start: 5, end: 8}),
             frameRate: 3,
             repeat: -1
         };        

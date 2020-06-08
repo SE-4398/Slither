@@ -51,22 +51,27 @@ export class mouse extends npc  {
             case "up":
                 this.direction = "up";
                 this.play("upMouse", true);
+                this.setVelocity(0,-3);
                 break;
             case "down":
                 this.direction = "down";
                 this.play("downMouse", true);
+                this.setVelocity(0,3);
                 break;
             case "right":
                 this.direction = "right";
                 this.play("rightMouse", true);
+                this.setVelocity(3,0);
                 break;
             case "left":
                 this.direction = "left";
                 this.play('leftMouse', true);
+                this.setVelocity(-3,0);
                 break;
             case "stop":
                 this.direction = "stop";
                 this.play("idleMouse", true);
+                this.setVelocity(0,0);
                 break;
         }
         return;
@@ -76,9 +81,9 @@ export class mouse extends npc  {
         //randomeNumber > 0.5
         console.log("we changed direction of a mouse");
         let randomNumber = Math.random();
-        if(randomNumber > 0.5){
+        if(randomNumber > 0.75){
             //We move up or down
-            if(randomNumber > 0.75){
+            if(randomNumber > 0.875){
                 //We move up
                 this.newDirection = "up";
             }
@@ -88,18 +93,21 @@ export class mouse extends npc  {
             }
         }else{
             //We move left or right
-            if(randomNumber > 0.25){
+            if(randomNumber > 0.375){
                 // We move left
-                this.newDirection = "left";
-            }
-            else if(randomNumber > 0.10){
-                //we move right
-                this.newDirection = "right";
+                if(randomNumber > 0.5625) {
+                    this.newDirection = "left";
+                }
+                else {
+                    //we move right
+                    this.newDirection = "right";
+                }
             }
             else{
                 //Remains still
                 this.newDirection = "stop";
             }
+
         }
 
         return;
