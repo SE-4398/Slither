@@ -22,7 +22,7 @@ export class menuScene extends Phaser.Scene{
     create(): void {
 
         //this.backGround = this.add.image(0, 0, "backGround").setOrigin(0);
-        let newGameButton = this.add.text(150,100, "Start Game", {font: "16px Courier ", fill: "#0f0"});
+        let newGameButton = this.add.text(150,100, "Start Game SEM was here", {font: "16px Courier ", fill: "#0f0"});
         newGameButton.setInteractive();
         newGameButton.on('pointerdown', () => {
             this.scene.start("gameScene"); });
