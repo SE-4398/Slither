@@ -22,16 +22,12 @@ export class menuScene extends Phaser.Scene{
     create(): void {
 
         //this.backGround = this.add.image(0, 0, "backGround").setOrigin(0);
-        let newGameButton = this.add.text(150, 100, "Start Game - SEM is now here", {
-            font: "16px Courier ",
-            fill: "#0f0"
-        });
+        let newGameButton = this.add.text(150,100, "Start Game SEM was here", {font: "16px Courier ", fill: "#0f0"});
         newGameButton.setInteractive();
         newGameButton.on('pointerdown', () => {
-            this.scene.start("gameScene");
-        });
+            this.scene.start("gameScene"); });
 
-        let optionsButton = this.add.text(150, 150, "Options", {font: "16px Courier ", fill: "#0f0"});
+        let optionsButton = this.add.text(150,150, "Options", {font: "16px Courier ", fill: "#0f0"});
         optionsButton.setInteractive();
         optionsButton.on('pointerdown', () => {
             //this.scene.start("optionsScene");
