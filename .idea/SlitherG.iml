@@ -8,7 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/app/templates/static/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.8 (venv)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (Slither)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="a076d05399" level="application" />
     <orderEntry type="library" name="moment.js" level="application" />
